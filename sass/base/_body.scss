@@ -1,0 +1,6 @@
+body {
+    margin: 1rem 1rem;
+    @include desktop {
+        margin: 1rem 3rem;
+    }
+}

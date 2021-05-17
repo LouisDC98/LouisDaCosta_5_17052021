@@ -1,0 +1,10 @@
+.home-header {
+    display: flex;
+    justify-content: center;
+    &__main-logo {
+        width: 70vw;
+        @include desktop {
+            width: 35vw;
+        }
+    }
+}
