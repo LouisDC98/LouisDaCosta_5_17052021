@@ -1,0 +1,19 @@
+{
+  "name": "writing-sass",
+  "version": "1.0.0",
+  "description": "Les petits plats",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LouisDC98/LouisDaCosta_5_17052021"
+  },
+  "author": "LouisDC98",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LouisDC98/LouisDaCosta_5_17052021/issues"
+  },
+  "homepage": ""
+}
