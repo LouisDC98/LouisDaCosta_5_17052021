@@ -1,6 +1,8 @@
 body {
-    margin: 1rem 1rem;
+    margin: auto;
+    max-width: 1920px;
+    padding: 1rem 1rem;
     @include desktop {
-        margin: 1rem 3rem;
+        padding: 1rem 2rem;
     }
 }
