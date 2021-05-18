@@ -7,42 +7,60 @@
     flex-wrap: wrap;
 }
 
-.dropdowns {
-    display: flex;
-    padding: 1rem 1rem 1rem 1rem;
-    border-radius: 4px;
+/* Dropdown Button */
+.dropbtn {
+    color: white;
+    padding: 1rem 1rem 1rem 0;
+    font-size: 16px;
     border: none;
-    margin: 2rem 1rem 0rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 10rem;
     &--ingredients {
-       background-color: $ingredientsDropdown; 
+        background-color: $ingredientsDropdown;
     }
     &--apareils {
         background-color: $apareilsDropdown; 
-     }
+    }
     &--ustensiles {
         background-color: $ustensilesDropdown; 
     }
-    &__list {
-        background-color: $apareilsDropdown;
-        color: red;
+  }
+
+.arrow-down {
+    margin-left: 1rem;
+}
+    
+.dropdown {
+    margin: 2rem 3rem 0 0;
+    position: relative;
+    display: inline-block;
+}
+  
+/* Dropdown list */
+.dropdown-content {
+    display: block;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: -5px ;
+    border-radius: 0 5px 5px 5px;
+    &--ingredients {
+        background-color: $ingredientsDropdown;
     }
-    &__search {
-        color: white;
-        background-color: transparent;
-        border: none;
-        font-size: 1rem;
-        width: 65vw;
-        @include desktop {
-            width: 7rem;
-        }
-        outline: none;
+    &--apareils {
+        background-color: $apareilsDropdown; 
     }
-    ::placeholder {
+    &--ustensiles {
+        background-color: $ustensilesDropdown; 
+    }
+    & > a {
         color: white;
-      }
-    &__icon {
-        background-color: transparent;
-        border: none;
-        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
     }
 }
+    
+.show {display:block;}
