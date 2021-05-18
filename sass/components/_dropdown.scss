@@ -9,58 +9,79 @@
 
 /* Dropdown Button */
 .dropbtn {
+    display: flex;
+    justify-content: space-between;
     color: white;
-    padding: 1rem 1rem 1rem 0;
+    padding: 1rem;
     font-size: 16px;
     border: none;
     cursor: pointer;
     border-radius: 4px;
-    width: 10rem;
+    width: $widthContentMobile;
+    @include desktop {
+        // little buttons
+        // width: 10rem;
+        // selected buttons
+        width: $widthContentDesktop;
+    }
     &--ingredients {
         background-color: $ingredientsDropdown;
     }
     &--apareils {
-        background-color: $apareilsDropdown; 
+        background-color: $apareilsDropdown;
     }
     &--ustensiles {
-        background-color: $ustensilesDropdown; 
+        background-color: $ustensilesDropdown;
     }
-  }
+}
 
 .arrow-down {
     margin-left: 1rem;
 }
-    
+
 .dropdown {
-    margin: 2rem 3rem 0 0;
     position: relative;
     display: inline-block;
+    margin-top: 1rem;
+    @include desktop {
+        margin-right: 2rem;
+    }
+    &__content {
+        // flex only for test none for hide content
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 1rem 0;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        margin-top: -5px;
+        border-radius: 0 5px 5px 5px;
+        width: $widthContentMobile;
+        @include desktop {
+            width: $widthContentDesktop;
+        }
+        &--ingredients {
+            background-color: $ingredientsDropdown;
+        }
+        &--apareils {
+            background-color: $apareilsDropdown;
+        }
+        &--ustensiles {
+            background-color: $ustensilesDropdown;
+        }
+        &__links {
+            color: white;
+            padding: 5px 16px;
+            text-decoration: none;
+            display: block;
+            width: 7rem;
+            @include desktop {
+                width: 9rem;
+            }
+        }
+    }
 }
-  
-/* Dropdown list */
-.dropdown-content {
+
+.show {
     display: block;
-    position: absolute;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    margin-top: -5px ;
-    border-radius: 0 5px 5px 5px;
-    &--ingredients {
-        background-color: $ingredientsDropdown;
-    }
-    &--apareils {
-        background-color: $apareilsDropdown; 
-    }
-    &--ustensiles {
-        background-color: $ustensilesDropdown; 
-    }
-    & > a {
-        color: white;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
 }
-    
-.show {display:block;}

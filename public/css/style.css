@@ -64,13 +64,20 @@ body {
 
 /* Dropdown Button */
 .dropbtn {
+  display: flex;
+  justify-content: space-between;
   color: white;
-  padding: 1rem 1rem 1rem 0;
+  padding: 1rem;
   font-size: 16px;
   border: none;
   cursor: pointer;
   border-radius: 4px;
-  width: 10rem;
+  width: 80vw;
+}
+@media (min-width: 767px) {
+  .dropbtn {
+    width: 45vw;
+  }
 }
 .dropbtn--ingredients {
   background-color: #4769ff;
@@ -87,35 +94,51 @@ body {
 }
 
 .dropdown {
-  margin: 2rem 3rem 0 0;
   position: relative;
   display: inline-block;
+  margin-top: 1rem;
 }
-
-/* Dropdown list */
-.dropdown-content {
-  display: block;
-  position: absolute;
-  min-width: 160px;
+@media (min-width: 767px) {
+  .dropdown {
+    margin-right: 2rem;
+  }
+}
+.dropdown__content {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 1rem 0;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   margin-top: -5px;
   border-radius: 0 5px 5px 5px;
+  width: 80vw;
 }
-.dropdown-content--ingredients {
+@media (min-width: 767px) {
+  .dropdown__content {
+    width: 45vw;
+  }
+}
+.dropdown__content--ingredients {
   background-color: #4769ff;
 }
-.dropdown-content--apareils {
+.dropdown__content--apareils {
   background-color: mediumaquamarine;
 }
-.dropdown-content--ustensiles {
+.dropdown__content--ustensiles {
   background-color: #d84722;
 }
-.dropdown-content > a {
+.dropdown__content__links {
   color: white;
-  padding: 12px 16px;
+  padding: 5px 16px;
   text-decoration: none;
   display: block;
+  width: 7rem;
+}
+@media (min-width: 767px) {
+  .dropdown__content__links {
+    width: 9rem;
+  }
 }
 
 .show {
