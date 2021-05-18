@@ -46,4 +46,57 @@ body {
   padding: 8.3px 10px 8.3px 10px;
 }
 
+.buttons-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@media (min-width: 767px) {
+  .buttons-section {
+    justify-content: flex-start;
+  }
+}
+
+.dropdowns {
+  display: flex;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 4px;
+  border: none;
+  margin: 2rem 1rem 0rem 1rem;
+}
+.dropdowns--ingredients {
+  background-color: #4769ff;
+}
+.dropdowns--apareils {
+  background-color: mediumaquamarine;
+}
+.dropdowns--ustensiles {
+  background-color: #d84722;
+}
+.dropdowns__list {
+  background-color: mediumaquamarine;
+  color: red;
+}
+.dropdowns__search {
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  width: 65vw;
+  outline: none;
+}
+@media (min-width: 767px) {
+  .dropdowns__search {
+    width: 7rem;
+  }
+}
+.dropdowns ::placeholder {
+  color: white;
+}
+.dropdowns__icon {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
 /*# sourceMappingURL=style.css.map */

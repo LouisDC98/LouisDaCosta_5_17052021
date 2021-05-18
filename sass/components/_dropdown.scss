@@ -1,0 +1,48 @@
+.buttons-section {
+    display: flex;
+    justify-content: center;
+    @include desktop {
+        justify-content: flex-start;
+    }
+    flex-wrap: wrap;
+}
+
+.dropdowns {
+    display: flex;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 4px;
+    border: none;
+    margin: 2rem 1rem 0rem 1rem;
+    &--ingredients {
+       background-color: $ingredientsDropdown; 
+    }
+    &--apareils {
+        background-color: $apareilsDropdown; 
+     }
+    &--ustensiles {
+        background-color: $ustensilesDropdown; 
+    }
+    &__list {
+        background-color: $apareilsDropdown;
+        color: red;
+    }
+    &__search {
+        color: white;
+        background-color: transparent;
+        border: none;
+        font-size: 1rem;
+        width: 65vw;
+        @include desktop {
+            width: 7rem;
+        }
+        outline: none;
+    }
+    ::placeholder {
+        color: white;
+      }
+    &__icon {
+        background-color: transparent;
+        border: none;
+        color: white;
+    }
+}

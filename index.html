@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Les Petits Plats</title>
@@ -9,17 +10,39 @@
     <script src="https://kit.fontawesome.com/5dd13a47f1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="public/css/style.css">
 </head>
+
 <body>
 
     <header class="home-header">
-       <img src='./public/img/Logo_slogan.PNG' alt="Logo et slogan du site" class="home-header__main-logo">
+        <img src='./public/img/Logo_slogan.PNG' alt="Logo et slogan du site" class="home-header__main-logo">
     </header>
-   
+
     <main>
         <form class="searchtool">
-            <input type="text" name="name" id="searchBar" required placeholder="Recherche un ingrédient, apareil, ustensile ou recette" class="searchtool__search-bar">
+            <input type="text" name="name" id="searchBar" required
+                placeholder="Recherche un ingrédient, apareil, ustensile ou recette" class="searchtool__search-bar">
             <button class="searchtool__icon"><i class="fas fa-search"></i></button>
         </form>
+
+        <section class="buttons-section">
+            <div class="dropdowns dropdowns--ingredients">
+                <input placeholder="Ingrédients" autoComplete="on" class="dropdowns__search"
+                    onclick="" />
+                <button class="dropdowns__icon"><i class="fas fa-chevron-down"></i></button>
+            </div>
+
+            <div class="dropdowns dropdowns--apareils">
+                <input placeholder="Apareils" autoComplete="on" class="dropdowns__search"
+                    onclick="" />
+                <button class="dropdowns__icon"><i class="fas fa-chevron-down"></i></button>
+            </div>
+
+            <div class="dropdowns dropdowns--ustensiles">
+                <input placeholder="Ustensiles" autoComplete="on" class="dropdowns__search"
+                    onclick="" />
+                <button class="dropdowns__icon"><i class="fas fa-chevron-down"></i></button>
+            </div>
+        </section>
     </main>
 
 </body>
