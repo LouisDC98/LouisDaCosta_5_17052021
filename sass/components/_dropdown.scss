@@ -12,17 +12,15 @@
     display: flex;
     justify-content: space-between;
     color: white;
-    padding: 1rem;
     font-size: 16px;
+    padding: 0;
     border: none;
     cursor: pointer;
     border-radius: 4px;
     width: $widthContentMobile;
     @include desktop {
-        // little buttons
-        // width: 10rem;
-        // selected buttons
-        width: $widthContentDesktop;
+        transition : width $transitionTime ease-in-out;
+        width: 12rem;
     }
     &--ingredients {
         background-color: $ingredientsDropdown;
@@ -33,10 +31,50 @@
     &--ustensiles {
         background-color: $ustensilesDropdown;
     }
+    &__search {
+        background-color: transparent;
+        border: none;
+        font-size: 1.2rem;
+        color: white;
+        padding: 0.5rem 0;
+        margin: 1rem 0 1rem 1rem;
+        transition : width $transitionTime ease-in-out;
+        width: 7rem;
+    }
+    ::placeholder {
+        color: white;
+    } 
 }
 
+// Active when icon is pressed
+.dropbtn--grow {
+    @include desktop {
+    width: $widthContentDesktop;
+    }
+}
+
+// Active when icon is pressed
+.dropbtn__search--grow {
+    width: 55vw;
+    @include desktop {
+        width: 20rem;
+    }
+}
+
+// Active when icon is pressed
 .arrow-down {
-    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 4.4rem;
+    transform: rotate(0deg);
+    transition: $transitionTime;
+}
+
+.arrow-down--turn {
+    transform: rotate(180deg);
+    transition: $transitionTime*2;
 }
 
 .dropdown {
@@ -47,8 +85,7 @@
         margin-right: 2rem;
     }
     &__content {
-        // flex only for test none for hide content
-        display: flex;
+        display: none;
         justify-content: flex-start;
         flex-wrap: wrap;
         padding: 1rem 0;
@@ -70,10 +107,11 @@
             background-color: $ustensilesDropdown;
         }
         &__links {
+            display: block;
             color: white;
             padding: 5px 16px;
             text-decoration: none;
-            display: block;
+            font-size: 1.1rem;
             width: 7rem;
             @include desktop {
                 width: 9rem;
@@ -82,6 +120,7 @@
     }
 }
 
+// Show content
 .show {
-    display: block;
+    display: flex;
 }
