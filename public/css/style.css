@@ -107,21 +107,18 @@ body {
 }
 
 @media (min-width: 767px) {
-  .dropbtn--grow {
+  .show .dropbtn {
     width: 45vw;
   }
 }
 
-.dropbtn__search--grow {
+.show .dropbtn__search {
   width: 55vw;
 }
 @media (min-width: 767px) {
-  .dropbtn__search--grow {
+  .show .dropbtn__search {
     width: 20rem;
   }
-}
-.dropbtn__search--grow ::placeholder {
-  color: red;
 }
 
 .arrow-down {
@@ -134,7 +131,7 @@ body {
   transition: 0.5s;
 }
 
-.arrow-down--turn {
+.show .arrow-down {
   transform: rotate(180deg);
   transition: 1s;
 }
@@ -187,8 +184,7 @@ body {
     width: 9rem;
   }
 }
-
-.show {
+.show .dropdown__content {
   display: flex;
 }
 

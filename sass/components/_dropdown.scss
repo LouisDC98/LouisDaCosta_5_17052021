@@ -48,24 +48,20 @@
 }
 
 // Active when icon is pressed
-.dropbtn--grow {
+.show .dropbtn {
     @include desktop {
     width: $widthContentDesktop;
     }
 }
 
 // Active when icon is pressed
-.dropbtn__search--grow {
+.show .dropbtn__search {
     width: 55vw;
     @include desktop {
         width: 20rem;
-    }
-    ::placeholder {
-        color: red;
     } 
 }
 
-// Active when icon is pressed
 .arrow-down {
     display: flex;
     align-items: center;
@@ -76,7 +72,7 @@
     transition: $transitionTime;
 }
 
-.arrow-down--turn {
+.show .arrow-down {
     transform: rotate(180deg);
     transition: $transitionTime*2;
 }
@@ -121,10 +117,8 @@
                 width: 9rem;
             }
         }
+        .show & {
+            display: flex;
+        }
     }
-}
-
-// Show content
-.show {
-    display: flex;
 }

@@ -1,72 +1,47 @@
 // Define each button
 const btnIngr = document.getElementById("btnIngr");
-const btnApar = document.getElementById("btnApar");
+const btnAppa = document.getElementById("btnAppa");
 const btnUste = document.getElementById("btnUste");
 
 // Define search bar in each button
 const inputIngr = document.getElementById("inputIngr");
-const inputApar = document.getElementById("inputApar");
+const inputAppa = document.getElementById("inputAppa");
 const inputUste = document.getElementById("inputUste");
 
-// Define icon in each button
-const iconIngr = document.getElementById("iconIngr");
-const iconApar = document.getElementById("iconApar");
-const iconUste = document.getElementById("iconUste");
-
-// Define each list of button
-const contIngr = document.getElementById("contIngr");
-const contApar = document.getElementById("contApar");
-const contUste = document.getElementById("contUste");
-
+const dropdownIngr = document.getElementById("dropdownIngr");
+const dropdownAppa = document.getElementById("dropdownAppa");
+const dropdownUste = document.getElementById("dropdownUste");
 
 /***********************************************************************************/
 /*********************Open content and change style of buttons*********************/
 /*********************************************************************************/
 
-// When iconIngr pressed launch functions openContent and grownBtn
-iconIngr.addEventListener('click', function (){openContent(contIngr);});
-iconIngr.addEventListener('click', function (){growBtn(btnIngr, inputIngr, iconIngr);});
+btnIngr.addEventListener('click', function (){
+    toggleDropdown(dropdownIngr);
+});
 
-// When iconAppa pressed launch functions openContent and grownBtn
-iconAppa.addEventListener('click', function (){openContent(contAppa);});
-iconAppa.addEventListener('click', function (){growBtn(btnAppa, inputAppa, iconAppa);});
+btnAppa.addEventListener('click', function (){
+    toggleDropdown(dropdownAppa);
+});
 
-// When iconUste pressed launch functions openContent and grownBtn
-iconUste.addEventListener('click', function (){openContent(contUste);});
-iconUste.addEventListener('click', function (){growBtn(btnUste, inputUste, iconUste);});
+btnUste.addEventListener('click', function (){
+    toggleDropdown(dropdownUste);
+});
 
-// Open content
-function openContent(content) {
-    if(!content.classList.contains("show")) {
+function toggleDropdown(content) {
+    const isDisplayed = content.classList.contains("show");
+    closeAllDropdown();
+    if(!isDisplayed){
         content.classList.add("show");
     }
-    else if(content.classList.contains("show")) {
-        content.classList.remove("show");
-    }
 }
 
-// Change width of the button and input bar also rotate arrow
-function growBtn(btn, input, icon) {
-    if(btn.classList.contains('dropbtn--grow')) {
-        btn.classList.remove('dropbtn--grow');
-    }
-    else if(!btn.classList.contains('dropbtn--grow')) {
-        btn.classList.add('dropbtn--grow');
-    }
-    if(input.classList.contains('dropbtn__search--grow')) {
-        input.classList.remove('dropbtn__search--grow');
-    }
-    else if(!input.classList.contains('dropbtn__search--grow')) {
-        input.classList.add('dropbtn__search--grow');
-    }
-    if(icon.classList.contains('arrow-down--turn')) {
-        icon.classList.remove('arrow-down--turn');
-    }
-    else if(!icon.classList.contains('arrow-down--turn')) {
-        icon.classList.add('arrow-down--turn');
+function closeAllDropdown() {
+    const elements = document.getElementsByClassName("dropdown show");
+    if(elements.length > 0) {
+        elements[0].classList.remove("show");
     }
 }
-
 
 /***********************************************************************************/
 /****************************Make a research in content****************************/
