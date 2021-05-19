@@ -85,7 +85,7 @@ body {
 .dropbtn--ingredients {
   background-color: #4769ff;
 }
-.dropbtn--apareils {
+.dropbtn--appareils {
   background-color: mediumaquamarine;
 }
 .dropbtn--ustensiles {
@@ -94,6 +94,7 @@ body {
 .dropbtn__search {
   background-color: transparent;
   border: none;
+  outline: none;
   font-size: 1.2rem;
   color: white;
   padding: 0.5rem 0;
@@ -118,6 +119,9 @@ body {
   .dropbtn__search--grow {
     width: 20rem;
   }
+}
+.dropbtn__search--grow ::placeholder {
+  color: red;
 }
 
 .arrow-down {
@@ -164,7 +168,7 @@ body {
 .dropdown__content--ingredients {
   background-color: #4769ff;
 }
-.dropdown__content--apareils {
+.dropdown__content--appareils {
   background-color: mediumaquamarine;
 }
 .dropdown__content--ustensiles {

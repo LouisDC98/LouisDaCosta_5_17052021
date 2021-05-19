@@ -25,8 +25,8 @@
     &--ingredients {
         background-color: $ingredientsDropdown;
     }
-    &--apareils {
-        background-color: $apareilsDropdown;
+    &--appareils {
+        background-color: $appareilsDropdown;
     }
     &--ustensiles {
         background-color: $ustensilesDropdown;
@@ -34,6 +34,7 @@
     &__search {
         background-color: transparent;
         border: none;
+        outline: none;
         font-size: 1.2rem;
         color: white;
         padding: 0.5rem 0;
@@ -59,6 +60,9 @@
     @include desktop {
         width: 20rem;
     }
+    ::placeholder {
+        color: red;
+    } 
 }
 
 // Active when icon is pressed
@@ -100,8 +104,8 @@
         &--ingredients {
             background-color: $ingredientsDropdown;
         }
-        &--apareils {
-            background-color: $apareilsDropdown;
+        &--appareils {
+            background-color: $appareilsDropdown;
         }
         &--ustensiles {
             background-color: $ustensilesDropdown;

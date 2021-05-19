@@ -27,9 +27,9 @@ const contUste = document.getElementById("contUste");
 iconIngr.addEventListener('click', function (){openContent(contIngr);});
 iconIngr.addEventListener('click', function (){growBtn(btnIngr, inputIngr, iconIngr);});
 
-// When iconApar pressed launch functions openContent and grownBtn
-iconApar.addEventListener('click', function (){openContent(contApar);});
-iconApar.addEventListener('click', function (){growBtn(btnApar, inputApar, iconApar);});
+// When iconAppa pressed launch functions openContent and grownBtn
+iconAppa.addEventListener('click', function (){openContent(contAppa);});
+iconAppa.addEventListener('click', function (){growBtn(btnAppa, inputAppa, iconAppa);});
 
 // When iconUste pressed launch functions openContent and grownBtn
 iconUste.addEventListener('click', function (){openContent(contUste);});
@@ -73,7 +73,7 @@ function growBtn(btn, input, icon) {
 /*********************************************************************************/
 
 inputIngr.addEventListener('keyup', function (){filterFunction(inputIngr, contIngr);});
-inputApar.addEventListener('keyup', function (){filterFunction(inputApar, contApar);});
+inputAppa.addEventListener('keyup', function (){filterFunction(inputAppa, contAppa);});
 inputUste.addEventListener('keyup', function (){filterFunction(inputUste, contUste);});
 
 // Reserch match between input and content
