@@ -78,7 +78,7 @@ body {
 }
 @media (min-width: 767px) {
   .dropbtn {
-    transition: width 0.5s ease-in-out;
+    transition: width ease-in-out;
     width: 12rem;
   }
 }
@@ -186,6 +186,13 @@ body {
 }
 .show .dropdown__content {
   display: flex;
+}
+
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
 }
 
 /*# sourceMappingURL=style.css.map */

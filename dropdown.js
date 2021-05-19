@@ -8,6 +8,12 @@ const inputIngr = document.getElementById("inputIngr");
 const inputAppa = document.getElementById("inputAppa");
 const inputUste = document.getElementById("inputUste");
 
+// Define each list of button
+const contIngr = document.getElementById("contIngr");
+const contApar = document.getElementById("contApar");
+const contUste = document.getElementById("contUste");
+
+// Define each dropdown
 const dropdownIngr = document.getElementById("dropdownIngr");
 const dropdownAppa = document.getElementById("dropdownAppa");
 const dropdownUste = document.getElementById("dropdownUste");
@@ -53,10 +59,10 @@ inputUste.addEventListener('keyup', function (){filterFunction(inputUste, contUs
 
 // Reserch match between input and content
 function filterFunction(input, content) {
-    let filter = input.value.toUpperCase();
-    let a = content.getElementsByTagName("a");
+    const filter = input.value.toUpperCase();
+    const a = content.getElementsByTagName("a");
     for (i = 0; i < a.length; i++) {
-      let txtValue = a[i].textContent || a[i].innerText;
+      const txtValue = a[i].textContent || a[i].innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         a[i].style.display = "";
       } 
