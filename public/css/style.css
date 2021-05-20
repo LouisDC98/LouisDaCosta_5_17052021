@@ -195,4 +195,80 @@ input[type=search]::-webkit-search-results-decoration {
   -webkit-appearance: none;
 }
 
+.card {
+  background-color: gainsboro;
+  width: 80vw;
+  margin: 2rem 1rem 0 1rem;
+  border-radius: 5px;
+  padding: 1rem;
+}
+@media (min-width: 767px) {
+  .card {
+    width: 25vw;
+    margin: 2rem 2rem 0 0;
+  }
+}
+.card__secondary {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+}
+.card__secondary__ingredient {
+  padding: 0;
+  margin: 0 1rem 0 0;
+  list-style: none;
+}
+.card__secondary__description {
+  margin: 0;
+  width: 45vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 5rem;
+}
+@media (min-width: 767px) {
+  .card__secondary__description {
+    width: 15vw;
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title__name {
+  width: 50vw;
+  font-size: 1rem;
+  font-weight: normal;
+}
+@media (min-width: 767px) {
+  .title__name {
+    width: 20vw;
+  }
+}
+.title i {
+  margin: 0 0 0 0.5rem;
+}
+.title__time {
+  display: flex;
+  align-items: center;
+}
+.title__time__duration {
+  text-align: end;
+  font-weight: bold;
+  width: 4rem;
+}
+
+.recipes-bloc {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+}
+@media (min-width: 767px) {
+  .recipes-bloc {
+    justify-content: flex-start;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
