@@ -7,14 +7,22 @@
         margin: 2rem 2rem 0 0;
     }
     border-radius: 5px;
-    padding: 1rem;
+    &__img {
+        object-fit: cover;
+        height: 10rem;
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+    }
+    & > figcaption {
+        padding: 0 1rem 1rem 1rem;
+    }
     &__secondary {
         display: flex;
         justify-content: space-between;
         font-size: 0.7rem;
         &__ingredient {
             padding: 0;
-            margin: 0 1rem 0 0;
+            margin: 0 0.5rem 0 0;
             list-style: none;
         }
         &__description {
@@ -37,7 +45,7 @@
     &__name {
         width: 50vw;
         @include desktop {
-            width: 20vw;;
+            width: 20vw;
         }
         font-size: 1rem;
         font-weight: normal;
@@ -48,10 +56,10 @@
     &__time {
         display: flex;
         align-items: center;
-        &__duration{
+        &__duration {
             text-align: end;
             font-weight: bold;
-            width: 4rem;
-        }  
+            width: 56px;
+        }
     }
 }

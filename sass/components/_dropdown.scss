@@ -19,7 +19,7 @@
     border-radius: 4px;
     width: $widthContentMobile;
     @include desktop {
-        transition : width  ease-in-out;
+        transition: width ease-in-out;
         width: 12rem;
     }
     &--ingredients {
@@ -39,18 +39,18 @@
         color: white;
         padding: 0.5rem 0;
         margin: 0.5rem 0 0.5rem 1rem;
-        transition : width $transitionTime ease-in-out;
+        transition: width $transitionTime ease-in-out;
         width: 7rem;
     }
     ::placeholder {
         color: white;
-    } 
+    }
 }
 
 // Active when icon is pressed
 .show .dropbtn {
     @include desktop {
-    width: $widthContentDesktop;
+        width: $widthContentDesktop;
     }
 }
 
@@ -59,7 +59,7 @@
     width: 55vw;
     @include desktop {
         width: 20rem;
-    } 
+    }
 }
 
 .arrow-down {
@@ -74,7 +74,7 @@
 
 .show .arrow-down {
     transform: rotate(180deg);
-    transition: $transitionTime*2;
+    transition: $transitionTime * 2;
 }
 
 .dropdown {
@@ -88,6 +88,7 @@
         display: none;
         justify-content: flex-start;
         flex-wrap: wrap;
+        position: absolute;
         padding: 1rem 0;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
@@ -128,5 +129,5 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
-  -webkit-appearance:none;
+    -webkit-appearance: none;
 }
