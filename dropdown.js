@@ -18,25 +18,38 @@ const dropdownIngr = document.getElementById("dropdownIngr");
 const dropdownAppa = document.getElementById("dropdownAppa");
 const dropdownUste = document.getElementById("dropdownUste");
 
+// Define icon of each dropdown
+const iconIngr = document.getElementById('iconIngr');
+const iconAppa = document.getElementById('iconAppa');
+const iconUste = document.getElementById('iconUste');
+
 /***********************************************************************************/
 /*********************Open content and change style of buttons*********************/
 /*********************************************************************************/
 
-btnIngr.addEventListener('click', function (){
-    toggleDropdown(dropdownIngr);
+iconIngr.addEventListener('click', function (){
+    toggleDropdown(dropdownIngr,inputIngr, textIngr);
+    modifyPlaceholder(inputIngr, textIngr);
 });
 
-btnAppa.addEventListener('click', function (){
-    toggleDropdown(dropdownAppa);
+iconAppa.addEventListener('click', function (){
+    toggleDropdown(dropdownAppa,inputAppa, textAppa);
+    modifyPlaceholder(inputAppa, textAppa);
 });
 
-btnUste.addEventListener('click', function (){
-    toggleDropdown(dropdownUste);
+iconUste.addEventListener('click', function (){
+    toggleDropdown(dropdownUste, inputUste, textUste);
+    modifyPlaceholder(inputUste, textUste);
 });
 
-function toggleDropdown(content) {
+function toggleDropdown(content, input, text) {
     const isDisplayed = content.classList.contains("show");
     closeAllDropdown();
+    if(input.placeholder != text) {
+    inputIngr.placeholder = 'Ingrédients';
+    inputAppa.placeholder = 'Appareils';
+    inputUste.placeholder = 'Ustensiles';
+    }
     if(!isDisplayed){
         content.classList.add("show");
     }
@@ -69,5 +82,22 @@ function filterFunction(input, content) {
       else {
         a[i].style.display = "none";
       }
+    }
+}
+
+// Define new placeholder
+const textIngr = 'Recherche un ingrédient';
+const textAppa = 'Recherche un appareil';
+const textUste = 'Recherche un ustensile';
+
+// Change placeholder when icon pressed
+function modifyPlaceholder(input, text) {
+    if(input.placeholder != text) {
+        input.placeholder = text; 
+    }
+    else {
+        inputIngr.placeholder = 'Ingrédients';
+        inputAppa.placeholder = 'Appareils';
+        inputUste.placeholder = 'Ustensiles';
     }
 }

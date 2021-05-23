@@ -71,7 +71,7 @@ function createElement(recipe) {
         const list = document.createElement('li');
         list.innerHTML = ingredient['ingredient'];
         if (ingredient['quantity']) {
-            list.innerHTML += ' : ' + ingredient['quantity'];
+            list.innerHTML += ': ' + ingredient['quantity'];
             if (ingredient['unit']) {
                 list.innerHTML += ' ' + ingredient['unit'];
             }
