@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 body {
   margin: auto;
   max-width: 1920px;
@@ -83,13 +84,13 @@ body {
   }
 }
 .dropbtn--ingredients {
-  background-color: #4769ff;
+  background-color: #3282F7;
 }
 .dropbtn--appareils {
-  background-color: mediumaquamarine;
+  background-color: #68D9A4;
 }
 .dropbtn--ustensiles {
-  background-color: #d84722;
+  background-color: #ED6454;
 }
 .dropbtn__search {
   background-color: transparent;
@@ -99,7 +100,6 @@ body {
   color: white;
   padding: 0.5rem 0;
   margin: 0.5rem 0 0.5rem 1rem;
-  transition: width 0.5s ease-in-out;
   width: 7rem;
 }
 .dropbtn ::placeholder {
@@ -164,13 +164,13 @@ body {
   }
 }
 .dropdown__content--ingredients {
-  background-color: #4769ff;
+  background-color: #3282F7;
 }
 .dropdown__content--appareils {
-  background-color: mediumaquamarine;
+  background-color: #68D9A4;
 }
 .dropdown__content--ustensiles {
-  background-color: #d84722;
+  background-color: #ED6454;
 }
 .dropdown__content__links {
   display: block;
@@ -215,6 +215,7 @@ input[type=search]::-webkit-search-results-decoration {
   border-radius: 5px 5px 0 0;
 }
 .card > figcaption {
+  font-family: "Lato", sans-serif;
   padding: 0 1rem 1rem 1rem;
 }
 .card__secondary {
@@ -232,7 +233,8 @@ input[type=search]::-webkit-search-results-decoration {
   width: 45vw;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 5rem;
+  line-height: 16px;
+  max-height: 5.1rem;
 }
 @media (min-width: 767px) {
   .card__secondary__description {
@@ -268,6 +270,44 @@ input[type=search]::-webkit-search-results-decoration {
   width: 56px;
 }
 
+.tag {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 3px;
+  color: white;
+  margin: 1rem 1rem 0 0;
+}
+.tag__name {
+  padding: 0.5rem 0 0.5rem 1rem;
+  margin: 0;
+}
+.tag__close {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+}
+.tag__icon {
+  font-size: 1.2rem;
+}
+
+.hide {
+  display: none;
+}
+
+.tag--ingredient {
+  background-color: #3282F7;
+}
+
+.tag--appareil {
+  background-color: #68D9A4;
+}
+
+.tag--ustensile {
+  background-color: #ED6454;
+}
+
 .recipes-bloc {
   display: flex;
   justify-content: center;
@@ -278,6 +318,11 @@ input[type=search]::-webkit-search-results-decoration {
   .recipes-bloc {
     justify-content: flex-start;
   }
+}
+
+.tags-bloc {
+  display: block;
+  justify-content: flex-start;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -17,7 +17,7 @@ function research() {
     }
     console.log(filteredRecipes)
 
-    // Remova all element with .card class after each keyup
+    // Remove all element with .card class after each keyup
     document.querySelectorAll('.card').forEach(function (a) {
         a.remove()
     })
@@ -97,3 +97,35 @@ function createElement(recipe) {
     // Add recipe element in article
     document.querySelector('article').appendChild(figure);
 }
+
+// Create an array with all a
+let links = []
+links.push(...contIngr.getElementsByTagName('a'));
+links.push(...contAppa.getElementsByTagName('a'));
+links.push(...contUste.getElementsByTagName('a'));
+
+const tags = []
+
+// Add tag in array and create
+function addTag(name, categorie){
+    const index = tags.findIndex(tag => tag === name);
+    if(index === -1){
+        tags.push(name);
+        createTag(name, categorie);
+    }
+}
+
+// Remove tag in array and close
+function removeTag(name){
+    const index = tags.findIndex(tag => tag === name);
+    if(index >= 0){
+        tags.splice(index,1);
+        closeTag(name);
+    }
+}
+
+links.forEach(link => {
+    link.addEventListener("click", function(){
+        addTag(link.innerHTML,link.parentElement.id)
+    });
+})
