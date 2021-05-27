@@ -36,22 +36,23 @@ recipes.forEach((recipe) => {
   recipe.appliance.forEach((appliance) => {
     if (arrayAppa.indexOf(appliance) === -1) {
       arrayAppa.push(appliance);
-      arrayAppa.sort();
     }
   });
   recipe.ustensils.forEach((ustensil) => {
     if (arrayUste.indexOf(ustensil) === -1) {
       arrayUste.push(ustensil);
-      arrayUste.sort();
     }
   });
   recipe.ingredients.forEach((ingredient) => {
     if (arrayIngr.indexOf(ingredient.ingredient) === -1) {
       arrayIngr.push(ingredient.ingredient);
-      arrayIngr.sort();
     }
   });
 });
+
+arrayIngr.sort();
+arrayUste.sort();
+arrayAppa.sort();
 
 DOMService.createContent(arrayIngr, arrayAppa, arrayUste);
 
