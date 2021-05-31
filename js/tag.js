@@ -5,7 +5,7 @@ class Tag {
     this.tags = [];
   }
 
-  // Add tag in array and create
+  // Add tag in array and launch function for create tag
   addTag(name, categorie) {
     const index = this.tags.findIndex((tag) => tag === name);
     if (index === -1) {
@@ -14,7 +14,7 @@ class Tag {
     }
   }
 
-  // Remove tag in array and close
+  // Remove tag in array and launch function for remove tag
   removeTag(name) {
     const index = this.tags.findIndex((tag) => tag === name);
     if (index >= 0) {

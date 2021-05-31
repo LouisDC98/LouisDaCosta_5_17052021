@@ -22,11 +22,6 @@ DOMServ.inputIngr.addEventListener('keyup', () => { SearchService.filterFunction
 DOMServ.inputAppa.addEventListener('keyup', () => { SearchService.filterFunction(DOMServ.inputAppa, DOMServ.contAppa); });
 DOMServ.inputUste.addEventListener('keyup', () => { SearchService.filterFunction(DOMServ.inputUste, DOMServ.contUste); });
 
-DOMServ.searchBar.addEventListener('keyup', () => {
-  const filteredRecipes = SearchService.research(DOMServ.searchBar.value.toUpperCase());
-  DOMService.displayRecipes(filteredRecipes);
-});
-
 DOMService.displayRecipes(recipes);
 
 const arrayIngr = [];

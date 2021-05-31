@@ -2,7 +2,7 @@ import DOMService from './domService.js';
 import recipes from './recipes.js';
 
 class SearchService {
-  // Reserch match between input and content
+  // Research match between input and tag content
   static filterFunction(input, content) {
     const filter = input.value.toUpperCase();
     if (filter.length > 0) {
@@ -22,17 +22,16 @@ class SearchService {
   }
 
   // Research match between input in search bar and name/description of each recipe of recipes array
-  static research(filter) {
-    const sanitizeFilter = filter.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  static research(searchParams) {
     const filteredRecipes = [];
     recipes.forEach((element) => {
-      if (element.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().indexOf(sanitizeFilter) > -1) {
+      if (element.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().indexOf(searchParams.main) > -1) {
         filteredRecipes.push(element);
-      } else if (element.description.toUpperCase().indexOf(filter) > -1) {
+      }
+      else if (element.description.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().indexOf(searchParams.main) > -1) {
         filteredRecipes.push(element);
       }
     });
-    console.log(filteredRecipes);
     return filteredRecipes;
   }
 }
