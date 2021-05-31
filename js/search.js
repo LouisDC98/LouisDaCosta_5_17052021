@@ -15,7 +15,7 @@ const arrayTagUste = [];
 
 DOMServ.searchBar.addEventListener('keyup', launchSearch);
 
-function launchSearch() {
+export function launchSearch() {
     extractValues ();
     var searchParams = new SearchParams(mainSearch, arrayTagIngr, arrayTagAppa, arrayTagUste);
     console.log(searchParams);

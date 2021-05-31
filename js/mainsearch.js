@@ -2,6 +2,7 @@ import recipes from './recipes.js';
 import Tag from './tag.js';
 import DOMService from './domService.js';
 import SearchService from './searchService.js';
+import {launchSearch} from './search.js';
 
 const DOMServ = new DOMService();
 const tagService = new Tag();
@@ -60,5 +61,6 @@ links.push(...DOMServ.contUste.getElementsByTagName('a'));
 links.forEach((link) => {
   link.addEventListener('click', () => {
     tagService.addTag(link.innerHTML, link.parentElement.id);
+    launchSearch();
   });
 });
