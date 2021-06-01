@@ -1,6 +1,6 @@
 import {filterFunction} from './search/tagSearch.js';
 import {toggleDropdown} from './DOM/domDropdown.js';
-import {launchSearch} from './search.js';
+import {launchSearch} from './search/search.js';
 
 function eventKeyupInput() {
   inputIngr.addEventListener('keyup', () => {filterFunction(inputIngr, contIngr);});

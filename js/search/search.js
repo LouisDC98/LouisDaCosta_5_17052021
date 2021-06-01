@@ -1,6 +1,6 @@
-import recipes from './data/recipes.js';
-import {displayRecipes} from './DOM/domRecipes.js';
-import {eventKeyupSearchBar} from './eventListener.js';
+import recipes from '../data/recipes.js';
+import {displayRecipes} from '../DOM/domRecipes.js';
+import {eventKeyupSearchBar} from '../eventListener.js';
 
 eventKeyupSearchBar();
 
