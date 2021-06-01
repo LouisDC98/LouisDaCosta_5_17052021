@@ -1,3 +1,5 @@
+import recipes from '../data/recipes.js';
+displayRecipes(recipes);
 // Define search bar in each button
 const inputIngr = document.getElementById('inputIngr');
 const inputAppa = document.getElementById('inputAppa');
