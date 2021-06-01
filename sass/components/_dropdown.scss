@@ -102,12 +102,24 @@
         }
         &--ingredients {
             background-color: $ingredientsDropdown;
+            :hover {
+                background-color: lighten($ingredientsDropdown, 10%);
+                border-radius: 10px;
+            }
         }
         &--appareils {
             background-color: $appareilsDropdown;
+            :hover {
+                background-color: lighten($appareilsDropdown, 10%);
+                border-radius: 10px;
+            }
         }
         &--ustensiles {
             background-color: $ustensilesDropdown;
+            :hover {
+                background-color: lighten($ustensilesDropdown, 10%);
+                border-radius: 10px;
+            }
         }
         &__links {
             display: block;
@@ -115,6 +127,7 @@
             padding: 5px 16px;
             text-decoration: none;
             font-size: 1.1rem;
+            cursor: pointer;
             width: 7rem;
             @include desktop {
                 width: 9rem;

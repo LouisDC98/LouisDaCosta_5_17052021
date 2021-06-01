@@ -170,11 +170,23 @@ body {
 .dropdown__content--ingredients {
   background-color: #3282F7;
 }
+.dropdown__content--ingredients :hover {
+  background-color: #63a0f9;
+  border-radius: 10px;
+}
 .dropdown__content--appareils {
   background-color: #68D9A4;
 }
+.dropdown__content--appareils :hover {
+  background-color: #91e3bd;
+  border-radius: 10px;
+}
 .dropdown__content--ustensiles {
   background-color: #ED6454;
+}
+.dropdown__content--ustensiles :hover {
+  background-color: #f28e82;
+  border-radius: 10px;
 }
 .dropdown__content__links {
   display: block;
@@ -182,6 +194,7 @@ body {
   padding: 5px 16px;
   text-decoration: none;
   font-size: 1.1rem;
+  cursor: pointer;
   width: 7rem;
 }
 @media (min-width: 767px) {
