@@ -1,4 +1,4 @@
-import {eventClickIcon} from './eventListener.js';
+import {eventClickIcon} from '../eventListener.js';
 import recipes from '../data/recipes.js';
 
 eventClickIcon();
@@ -19,43 +19,43 @@ function modifyPlaceholders() {
 /** *******************Open dropdown and change style of buttons******************* */
 /** ****************************************************************************** */
 function closeAllDropdown() {
-    const elements = document.getElementsByClassName('dropdown show');
-    if (elements.length > 0) {
-      elements[0].classList.remove('show');
-    }
-    modifyPlaceholders();
+  const elements = document.getElementsByClassName('dropdown show');
+  if (elements.length > 0) {
+    elements[0].classList.remove('show');
+  }
+  modifyPlaceholders();
 }
 
 function toggleDropdown(content) {
-    const isDisplayed = content.classList.contains('show');
-    closeAllDropdown();
-    if (!isDisplayed) {
-      content.classList.add('show');
-    }
-    modifyPlaceholders();
+  const isDisplayed = content.classList.contains('show');
+  closeAllDropdown();
+  if (!isDisplayed) {
+    content.classList.add('show');
+  }
+  modifyPlaceholders();
 }
 
 function openDropdown(contentId) {
-    let dropdown;
-    switch (contentId) {
-      case 'contIngr':
-        dropdown = dropdownIngr;
-        break;
-      case 'contAppa':
-        dropdown = dropdownAppa;
-        break;
-      case 'contUste':
-        dropdown = dropdownUste;
-        break;
-      default:
-        break;
-    }
+  let dropdown;
+  switch (contentId) {
+    case 'contIngr':
+      dropdown = dropdownIngr;
+      break;
+    case 'contAppa':
+      dropdown = dropdownAppa;
+      break;
+    case 'contUste':
+      dropdown = dropdownUste;
+      break;
+    default:
+      break;
+  }
 
-    const isDisplayed = dropdown.classList.contains('show');
-    if (!isDisplayed) {
-      dropdown.classList.add('show');
-    }
-    modifyPlaceholders();
+  const isDisplayed = dropdown.classList.contains('show');
+  if (!isDisplayed) {
+    dropdown.classList.add('show');
+  }
+  modifyPlaceholders();
 }
 
 const arrayIngr = [];
@@ -88,25 +88,25 @@ createContent(arrayIngr, arrayAppa, arrayUste);
 
 // Create list of ingredients
 function createContent(arrayIngr, arrayAppa, arrayUste) {
-    let links;
-    arrayIngr.forEach((ingredient) => {
-      links = document.createElement('a');
-      links.classList.add('dropdown__content__links');
-      links.innerHTML = ingredient;
-      document.getElementById('contIngr').appendChild(links);
-    });
-    arrayAppa.forEach((appliance) => {
-      links = document.createElement('a');
-      links.classList.add('dropdown__content__links');
-      links.innerHTML = appliance;
-      document.getElementById('contAppa').appendChild(links);
-    });
-    arrayUste.forEach((ustensil) => {
-      links = document.createElement('a');
-      links.classList.add('dropdown__content__links');
-      links.innerHTML = ustensil;
-      document.getElementById('contUste').appendChild(links);
-    });
+  let links;
+  arrayIngr.forEach((ingredient) => {
+    links = document.createElement('a');
+    links.classList.add('dropdown__content__links');
+    links.innerHTML = ingredient;
+    document.getElementById('contIngr').appendChild(links);
+  });
+  arrayAppa.forEach((appliance) => {
+links = document.createElement('a');
+    links.classList.add('dropdown__content__links');
+    links.innerHTML = appliance;
+    document.getElementById('contAppa').appendChild(links);
+  });
+  arrayUste.forEach((ustensil) => {
+    links = document.createElement('a');
+    links.classList.add('dropdown__content__links');
+    links.innerHTML = ustensil;
+    document.getElementById('contUste').appendChild(links);
+  });
 }
 
 export {modifyPlaceholders,closeAllDropdown, toggleDropdown, openDropdown, createContent}
