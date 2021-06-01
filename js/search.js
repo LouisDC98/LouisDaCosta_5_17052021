@@ -1,7 +1,8 @@
-import DOMService from './domService.js';
-import SearchService from './searchService.js';
+import recipes from './data/recipes.js';
+import {displayRecipes} from './DOM/domRecipes.js';
+import {eventKeyupSearchBar} from './eventListener.js';
 
-const DOMServ = new DOMService();
+eventKeyupSearchBar();
 
 // Define tags which are selected
 const tagsIngr = document.getElementsByClassName('tag--ingredient');
@@ -13,16 +14,14 @@ const arrayTagIngr = [];
 const arrayTagAppa = [];
 const arrayTagUste = [];
 
-DOMServ.searchBar.addEventListener('keyup', launchSearch);
-
 export function launchSearch() {
-    extractValues ();
-    var searchParams = new SearchParams(mainSearch, arrayTagIngr, arrayTagAppa, arrayTagUste);
-    console.log(searchParams);
-    const filteredRecipes = SearchService.research(searchParams);
-    var searchServices = new SearchServices(filteredRecipes);
-    console.log(searchServices);
-    DOMService.displayRecipes(filteredRecipes);
+  extractValues ();
+  var searchParams = new SearchParams(mainSearch, arrayTagIngr, arrayTagAppa, arrayTagUste);
+  console.log(searchParams);
+  const filteredRecipes = research(searchParams);
+  var searchServices = new SearchServices(filteredRecipes);
+  console.log(searchServices);
+  displayRecipes(filteredRecipes);
 }
 
 // Sanitize main input, and grab each tags that user wants
@@ -48,6 +47,19 @@ function extractValues() {
         }
       }
 }
+
+function research(searchParams) {
+    const filteredRecipes = [];
+    recipes.forEach((element) => {
+      if (element.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().indexOf(searchParams.main) > -1) {
+        filteredRecipes.push(element);
+      }
+      else if (element.description.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().indexOf(searchParams.main) > -1) {
+        filteredRecipes.push(element);
+      }
+    });
+    return filteredRecipes;
+  }
 
 // Catch input from user and isolate them
 class SearchParams {
