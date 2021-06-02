@@ -1,4 +1,4 @@
-import {eventClickIcon} from '../eventListener.js';
+import {eventClickIcon, eventClickLink} from '../eventListener.js';
 import recipes from '../data/recipes.js';
 
 eventClickIcon();
@@ -105,7 +105,7 @@ function createContent(arrayIngr, arrayAppa, arrayUste) {
     document.getElementById('contIngr').appendChild(links);
   });
   arrayAppa.forEach((appliance) => {
-links = document.createElement('a');
+    links = document.createElement('a');
     links.classList.add('dropdown__content__links');
     links.innerHTML = appliance;
     document.getElementById('contAppa').appendChild(links);
@@ -116,6 +116,7 @@ links = document.createElement('a');
     links.innerHTML = ustensil;
     document.getElementById('contUste').appendChild(links);
   });
+  eventClickLink();
 }
 
 export {modifyPlaceholders,closeAllDropdown, toggleDropdown, openDropdown, createContent, displayTags}

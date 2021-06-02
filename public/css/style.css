@@ -191,7 +191,7 @@ body {
 .dropdown__content__links {
   display: block;
   color: white;
-  padding: 5px 16px;
+  padding: 5px;
   text-decoration: none;
   font-size: 1.1rem;
   cursor: pointer;
@@ -199,11 +199,15 @@ body {
 }
 @media (min-width: 767px) {
   .dropdown__content__links {
-    width: 9rem;
+    width: calc(33% - 10px);
+    min-width: 9rem;
   }
 }
 .show .dropdown__content {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 input[type=search]::-webkit-search-decoration,

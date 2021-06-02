@@ -1,9 +1,8 @@
 import recipes from '../data/recipes.js';
 import {displayRecipes} from '../DOM/domRecipes.js';
-import {eventKeyupSearchBar, eventClickLink} from '../eventListener.js';
+import {eventKeyupSearchBar} from '../eventListener.js';
 import {displayTags} from '../DOM/domDropdown.js';
 
-eventClickLink()
 eventKeyupSearchBar();
 
 // Define tags which are selected

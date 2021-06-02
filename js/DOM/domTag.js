@@ -1,6 +1,3 @@
-import {eventClickLink} from '../eventListener.js';
-
-eventClickLink()
 const tags = [];
 
 // Add tag in array and launch function for create tag
