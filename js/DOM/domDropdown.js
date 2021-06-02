@@ -58,11 +58,14 @@ function openDropdown(contentId) {
   modifyPlaceholders();
 }
 
-const arrayIngr = [];
-const arrayAppa = [];
-const arrayUste = [];
+displayTags(recipes);
 
-recipes.forEach((recipe) => {
+function displayTags(titi) {
+  const arrayIngr = [];
+  const arrayAppa = [];
+  const arrayUste = [];
+
+  titi.forEach((recipe) => {
   recipe.appliance.forEach((appliance) => {
     if (arrayAppa.indexOf(appliance) === -1) {
       arrayAppa.push(appliance);
@@ -86,9 +89,15 @@ arrayAppa.sort();
 
 createContent(arrayIngr, arrayAppa, arrayUste);
 
+}
+
 // Create list of ingredients
 function createContent(arrayIngr, arrayAppa, arrayUste) {
   let links;
+    // Remove all element with .card class after each keyup
+  document.querySelectorAll('.dropdown__content__links').forEach((a) => {
+    a.remove();
+  });
   arrayIngr.forEach((ingredient) => {
     links = document.createElement('a');
     links.classList.add('dropdown__content__links');
@@ -109,4 +118,4 @@ links = document.createElement('a');
   });
 }
 
-export {modifyPlaceholders,closeAllDropdown, toggleDropdown, openDropdown, createContent}
+export {modifyPlaceholders,closeAllDropdown, toggleDropdown, openDropdown, createContent, displayTags}

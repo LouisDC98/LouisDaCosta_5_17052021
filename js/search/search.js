@@ -1,6 +1,7 @@
 import recipes from '../data/recipes.js';
 import {displayRecipes} from '../DOM/domRecipes.js';
 import {eventKeyupSearchBar, eventClickLink} from '../eventListener.js';
+import {displayTags} from '../DOM/domDropdown.js';
 
 eventClickLink()
 eventKeyupSearchBar();
@@ -23,6 +24,7 @@ function launchSearch() {
   var searchServices = new SearchServices(filteredRecipes);
   console.log(searchServices);
   displayRecipes(filteredRecipes);
+  displayTags(filteredRecipes);
 }
 
 class customFunction {
@@ -76,4 +78,4 @@ class SearchServices {
     }
 }
 
-export {launchSearch}
+export {launchSearch, research}
