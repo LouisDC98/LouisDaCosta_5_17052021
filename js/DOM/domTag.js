@@ -64,7 +64,7 @@ function removeTagContent(name) {
     btnClose.appendChild(icon);
 
     btnClose.addEventListener('click', () => {
-      removeTag(name);
+      removeTagContent(name);
     });
   }
 

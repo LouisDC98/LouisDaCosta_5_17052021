@@ -15,7 +15,7 @@ const arrayTagIngr = [];
 const arrayTagAppa = [];
 const arrayTagUste = [];
 
-export function launchSearch() {
+function launchSearch() {
   extractValues ();
   var searchParams = new SearchParams(mainSearch, arrayTagIngr, arrayTagAppa, arrayTagUste);
   console.log(searchParams);
@@ -25,29 +25,26 @@ export function launchSearch() {
   displayRecipes(filteredRecipes);
 }
 
+class customFunction {
+  static extractTags(tagsCategory, arrayCategory) {
+    for (let i = 0; i < tagsCategory.length; ++i) {
+      txtValue = tagsCategory[i].textContent
+      if(arrayCategory[i] !== txtValue) {
+        arrayCategory.push(txtValue);  
+      }
+    }
+  }
+}
+
 // Sanitize main input, and grab each tags that user wants
 var mainSearch;
 function extractValues() {
     mainSearch = searchBar.value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase()
-    for (let i = 0; i < tagsIngr.length; ++i) {
-        txtValue = tagsIngr[i].textContent
-        if(arrayTagIngr[i] !== txtValue) {
-            arrayTagIngr.push(txtValue);  
-        }
-      }
-      for (let i = 0; i < tagsAppa.length; ++i) {
-        txtValue = tagsAppa[i].textContent
-        if(arrayTagAppa[i] !== txtValue) {
-            arrayTagAppa.push(txtValue);  
-        }
-      }
-      for (let i = 0; i < tagsUste.length; ++i) {
-        txtValue = tagsUste[i].textContent
-        if(arrayTagUste[i] !== txtValue) {
-            arrayTagUste.push(txtValue);  
-        }
-      }
+    customFunction.extractTags(tagsIngr, arrayTagIngr);
+    customFunction.extractTags(tagsAppa, arrayTagAppa);
+    customFunction.extractTags(tagsUste, arrayTagUste);
 }
+
 
 function research(searchParams) {
     const filteredRecipes = [];
@@ -78,3 +75,5 @@ class SearchServices {
         this.recipes = recipes
     }
 }
+
+export {launchSearch}
