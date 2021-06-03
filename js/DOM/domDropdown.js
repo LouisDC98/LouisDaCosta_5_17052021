@@ -60,12 +60,12 @@ function openDropdown(contentId) {
 
 displayTags(recipes);
 
-function displayTags(titi) {
+function displayTags(filteredRecipes) {
   const arrayIngr = [];
   const arrayAppa = [];
   const arrayUste = [];
 
-  titi.forEach((recipe) => {
+  filteredRecipes.forEach((recipe) => {
   recipe.appliance.forEach((appliance) => {
     if (arrayAppa.indexOf(appliance) === -1) {
       arrayAppa.push(appliance);
