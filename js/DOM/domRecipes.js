@@ -104,4 +104,4 @@ function displayRecipes(recipes) {
   });
 }
 
-export {createElementRecipe, displayRecipes}
+export {displayRecipes}
