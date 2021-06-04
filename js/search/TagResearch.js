@@ -3,9 +3,9 @@ import {eventKeyupInput} from '../eventListener.js';
 
 eventKeyupInput();
 
-class TagSearch {
+class TagResearch {
   // Research match between input in dropdown and tag content
-  filterFunction(input, content) {
+  static filterFunction(input, content) {
     const filter = input.value.toUpperCase();
     if (filter.length > 0) {
       closeAllDropdown();
@@ -25,4 +25,4 @@ class TagSearch {
 }
 
 
-export {TagSearch};
+export {TagResearch};

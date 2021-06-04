@@ -1,12 +1,12 @@
-import {TagSearch} from './search/TagSearch.js';
+import {TagResearch} from './search/TagResearch.js';
 import {toggleDropdown} from './DOM/domDropdown.js';
 import {launchSearch} from './search/search.js';
 import {addTagContent} from './DOM/domTag.js';
 
 function eventKeyupInput() {
-  inputIngr.addEventListener('keyup', () => {TagSearch.filterFunction(inputIngr, contIngr);});
-  inputAppa.addEventListener('keyup', () => {TagSearch.filterFunction(inputAppa, contAppa);});
-  inputUste.addEventListener('keyup', () => {TagSearch.filterFunction(inputUste, contUste);});
+  inputIngr.addEventListener('keyup', () => {TagResearch.filterFunction(inputIngr, contIngr);});
+  inputAppa.addEventListener('keyup', () => {TagResearch.filterFunction(inputAppa, contAppa);});
+  inputUste.addEventListener('keyup', () => {TagResearch.filterFunction(inputUste, contUste);});
 }
 
 function eventClickIcon() {
