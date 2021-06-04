@@ -3,12 +3,13 @@ import {eventKeyupInput} from '../eventListener.js';
 
 eventKeyupInput();
 
-// Research match between input in dropdown and tag content
-function filterFunction(input, content) {
+class TagSearch {
+  // Research match between input in dropdown and tag content
+  filterFunction(input, content) {
     const filter = input.value.toUpperCase();
     if (filter.length > 0) {
-    closeAllDropdown();
-    openDropdown(content.id);
+      closeAllDropdown();
+      openDropdown(content.id);
     }
 
     const a = content.getElementsByTagName('a');
@@ -21,5 +22,7 @@ function filterFunction(input, content) {
       }
     }
   }
+}
 
-export {filterFunction};
+
+export {TagSearch};

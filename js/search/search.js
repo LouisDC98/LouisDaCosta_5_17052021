@@ -1,9 +1,9 @@
-import { displayRecipes } from '../DOM/domRecipes.js';
 import { eventKeyupSearchBar } from '../eventListener.js';
-import { displayTags } from '../DOM/domDropdown.js';
 import { SearchParams } from './SearchParams.js';
 import { SearchServices } from './SearchServices/SearchServices.js';
 import { SearchServicesInput } from './SearchServices/SearchServicesInput.js';
+import { displayRecipes } from '../DOM/domRecipes.js';
+import { displayTags } from '../DOM/domDropdown.js';
 
 eventKeyupSearchBar();
 
