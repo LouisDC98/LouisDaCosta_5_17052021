@@ -26,7 +26,6 @@ function removeTagContent(name) {
     const div = document.createElement('div');
     div.classList.add('tag');
     div.setAttribute('id', name);
-
     let classColor;
     switch (categorie) {
       case 'contIngr':

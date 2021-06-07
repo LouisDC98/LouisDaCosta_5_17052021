@@ -1,26 +1,5 @@
 import recipes from '../data/recipes.js';
 displayRecipes(recipes);
-// Define search bar in each button
-const inputIngr = document.getElementById('inputIngr');
-const inputAppa = document.getElementById('inputAppa');
-const inputUste = document.getElementById('inputUste');
-
-// Define each list of button
-const contIngr = document.getElementById('contIngr');
-const contAppa = document.getElementById('contAppa');
-const contUste = document.getElementById('contUste');
-
-// Define icon of each dropdown
-const iconIngr = document.getElementById('iconIngr');
-const iconAppa = document.getElementById('iconAppa');
-const iconUste = document.getElementById('iconUste');
-
-const searchBar = document.getElementById('searchBar');
-
-// Define each dropdown
-const dropdownIngr = document.getElementById('dropdownIngr');
-const dropdownAppa = document.getElementById('dropdownAppa');
-const dropdownUste = document.getElementById('dropdownUste');
 
 /** ******************************************************************************** */
 /** ******************************Create card recipe******************************* */

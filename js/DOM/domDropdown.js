@@ -9,6 +9,14 @@ function modifyPlaceholders() {
   const textIngr = 'Recherche un ingrédient';
   const textAppa = 'Recherche un appareil';
   const textUste = 'Recherche un ustensile';
+  // Define search bar in each button
+  const inputIngr = document.getElementById('inputIngr');
+  const inputAppa = document.getElementById('inputAppa');
+  const inputUste = document.getElementById('inputUste');
+  // Define each dropdown
+  const dropdownIngr = document.getElementById('dropdownIngr');
+  const dropdownAppa = document.getElementById('dropdownAppa');
+  const dropdownUste = document.getElementById('dropdownUste');
 
   inputIngr.placeholder = dropdownIngr.classList.contains('show') ? textIngr : 'Ingrédients';
   inputAppa.placeholder = dropdownAppa.classList.contains('show') ? textAppa : 'Appareils';
@@ -37,6 +45,10 @@ function toggleDropdown(content) {
 
 function openDropdown(contentId) {
   let dropdown;
+  // Define each dropdown
+  const dropdownIngr = document.getElementById('dropdownIngr');
+  const dropdownAppa = document.getElementById('dropdownAppa');
+  const dropdownUste = document.getElementById('dropdownUste');
   switch (contentId) {
     case 'contIngr':
       dropdown = dropdownIngr;
