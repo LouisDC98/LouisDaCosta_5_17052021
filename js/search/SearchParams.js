@@ -1,4 +1,4 @@
-import { customFunction } from '../customClass.js';
+import { CustomFunction } from '../CustomFunction.js';
 
 // Catch input from user and isolate them
 class SearchParams {
@@ -8,9 +8,9 @@ class SearchParams {
     const tagsIngr = document.getElementsByClassName('tag--ingredient');
     const tagsAppa = document.getElementsByClassName('tag--appareil');
     const tagsUste = document.getElementsByClassName('tag--ustensile');
-    this.ingredients = customFunction.extractTags(tagsIngr);
-    this.appareils = customFunction.extractTags(tagsAppa);
-    this.ustensiles = customFunction.extractTags(tagsUste);
+    this.ingredients = CustomFunction.extractTags(tagsIngr);
+    this.appareils = CustomFunction.extractTags(tagsAppa);
+    this.ustensiles = CustomFunction.extractTags(tagsUste);
   }
 }
 

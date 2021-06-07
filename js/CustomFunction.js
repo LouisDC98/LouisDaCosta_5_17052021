@@ -1,4 +1,4 @@
-class customFunction {
+class CustomFunction {
   static extractTags(tagsCategory) {
     let txtValue;
     const arrayCategory = [];
@@ -12,4 +12,4 @@ class customFunction {
   }
 }
 
-export { customFunction };
+export { CustomFunction };
