@@ -1,4 +1,4 @@
-import {closeAllDropdown, openDropdown} from '../DOM/domDropdown.js';
+import {closeAllDropdown, openDropdown} from './domDropdown.js';
 import {eventKeyupInput} from '../eventListener.js';
 
 eventKeyupInput();

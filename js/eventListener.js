@@ -1,4 +1,4 @@
-import TagResearch from './search/TagResearch.js';
+import TagResearch from './DOM/TagResearch.js';
 import {toggleDropdown} from './DOM/domDropdown.js';
 import {addTagContent} from './DOM/domTag.js';
 import SearchServices from './search/SearchServices/SearchServices.js';
