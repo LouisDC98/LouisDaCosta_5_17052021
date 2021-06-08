@@ -3,21 +3,21 @@ import SearchParams from '../SearchParams.js';
 import { eventKeyupSearchBar } from '../../eventListener.js';
 import { displayRecipes } from '../../DOM/domRecipes.js';
 import { displayTags } from '../../DOM/domDropdown.js';
+import recipes from '../../data/recipes.js';
+import SecondarySearch from './SecondarySearch.js';
 
-
-// Compare inputs with datas in recipes.js and return an array with recipies
 class SearchServices {
   constructor() {
-    this.recipes = MainSearch.research(new SearchParams());
+    this.defaultRecipes = recipes;
   }
 
   static launchSearch() {
     const searchParams = new SearchParams();
     console.log(searchParams);
-    const searchServices = new SearchServices();
-    console.log(searchServices);
-    displayRecipes(MainSearch.research(searchParams));
-    displayTags(MainSearch.research(searchParams));
+    const searchMainRecipesResult = MainSearch.research(searchParams);
+    const searchTagsRecipesResult = SecondarySearch.tagsMatch(searchParams);
+    displayRecipes(searchTagsRecipesResult);
+    displayTags(searchMainRecipesResult);
   };
 
 }
