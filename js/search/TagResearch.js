@@ -25,4 +25,4 @@ class TagResearch {
 }
 
 
-export {TagResearch};
+export default TagResearch;

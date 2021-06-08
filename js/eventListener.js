@@ -1,7 +1,7 @@
-import {TagResearch} from './search/TagResearch.js';
+import TagResearch from './search/TagResearch.js';
 import {toggleDropdown} from './DOM/domDropdown.js';
-import {launchSearch} from './search/search.js';
 import {addTagContent} from './DOM/domTag.js';
+import SearchServices from './search/SearchServices/SearchServices.js';
 
 function eventKeyupInput() {
   // Define search bar in each button
@@ -36,7 +36,7 @@ function eventClickIcon() {
 
 function eventKeyupSearchBar() {
   const searchBar = document.getElementById('searchBar');
-  searchBar.addEventListener('keyup', launchSearch);
+  searchBar.addEventListener('keyup', SearchServices.launchSearch);
 }
 
 function eventClickLink() {
@@ -53,7 +53,6 @@ function eventClickLink() {
   links.forEach((link) => {
     link.addEventListener('click', () => {
       addTagContent(link.innerHTML, link.parentElement.id);
-      launchSearch();
     });
   });
 }

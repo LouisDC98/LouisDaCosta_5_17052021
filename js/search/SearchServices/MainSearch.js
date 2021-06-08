@@ -1,6 +1,6 @@
 import recipes from '../../data/recipes.js';
 
-class SearchServicesInput {
+class MainSearch {
   static research(searchParams) {
     const filteredRecipes = [];
     recipes.forEach((element) => {
@@ -14,4 +14,4 @@ class SearchServicesInput {
   }
 }
 
-export { SearchServicesInput };
+export default MainSearch;

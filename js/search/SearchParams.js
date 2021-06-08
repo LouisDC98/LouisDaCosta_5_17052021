@@ -1,4 +1,4 @@
-import { CustomFunction } from '../CustomFunction.js';
+import CustomFunction from '../CustomFunction.js';
 
 // Catch input from user and isolate them
 class SearchParams {
@@ -14,4 +14,4 @@ class SearchParams {
   }
 }
 
-export { SearchParams };
+export default SearchParams;

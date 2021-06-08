@@ -12,4 +12,4 @@ class CustomFunction {
   }
 }
 
-export { CustomFunction };
+export default CustomFunction;

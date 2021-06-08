@@ -1,3 +1,5 @@
+import SearchServices from "../search/SearchServices/SearchServices.js";
+
 const tags = [];
 
 // Add tag in array and launch function for create tag
@@ -6,6 +8,7 @@ function addTagContent(name, categorie) {
   if (index === -1) {
     tags.push(name);
     addTag(name, categorie);
+    SearchServices.launchSearch();
   }
 }
 
@@ -15,6 +18,7 @@ function removeTagContent(name) {
   if (index >= 0) {
     tags.splice(index, 1);
     removeTag(name);
+    SearchServices.launchSearch();
   }
 }
 
