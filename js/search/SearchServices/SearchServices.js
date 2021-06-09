@@ -16,7 +16,23 @@ class SearchServices {
     console.log(searchParams);
     const searchMainRecipesResult = MainSearch.research(searchParams);
     const searchTagsRecipesResult = SecondarySearch.tagsMatch(searchParams);
-    displayRecipes(searchTagsRecipesResult);
+    console.log('Filtre main : ',searchMainRecipesResult);
+    console.log('Filtre tags : ',searchTagsRecipesResult)
+    const ArrayTags = document.getElementsByClassName('tag')
+
+    if (searchMainRecipesResult.length < 50) {
+      displayRecipes(searchMainRecipesResult);
+    }
+    if (ArrayTags.length !== 0) {
+      displayRecipes(searchTagsRecipesResult);
+    }
+    if (ArrayTags.length !== 0 && searchMainRecipesResult.length < 49 ) {
+      var result = searchTagsRecipesResult.filter(x =>searchMainRecipesResult.includes(x));
+      displayRecipes(result);
+    }
+    if (ArrayTags.length === 0 && searchMainRecipesResult.length === 50 ) {
+      displayRecipes(recipes);
+    }
     displayTags(searchMainRecipesResult);
   };
 

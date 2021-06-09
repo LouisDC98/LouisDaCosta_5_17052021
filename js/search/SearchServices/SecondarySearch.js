@@ -3,18 +3,28 @@ import recipes from '../../data/recipes.js';
 class SecondarySearch {
     
     static tagsMatch(searchParams) {
-        const filteredRecipesSecondary = [];
+        var filteredRecipesSecondary = [];
+        const TagIngredient = document.getElementsByClassName('tag--ingredient')
+        const TagAppareil = document.getElementsByClassName('tag--appareil')
+        // const TagUstensile = document.getElementsByClassName('tag--ustensile')
 
-        SecondarySearch.matchIngredients(searchParams).forEach(element => {
-            filteredRecipesSecondary.push(element);
-        });
-        SecondarySearch.matchAppareils(searchParams).forEach(element => {
-            filteredRecipesSecondary.push(element);
-        });
-        SecondarySearch.matchUstensiles(searchParams).forEach(element => {
-            filteredRecipesSecondary.push(element);
-        });
-        console.log(filteredRecipesSecondary)
+        if (TagIngredient.length === 0 || TagAppareil.length === 0) {
+            SecondarySearch.matchIngredients(searchParams).forEach(element => {
+                filteredRecipesSecondary.push(element);
+            });
+            SecondarySearch.matchAppareils(searchParams).forEach(element => {
+                filteredRecipesSecondary.push(element);
+            });
+            // SecondarySearch.matchUstensiles(searchParams).forEach(element => {
+            //     filteredRecipesSecondary.push(element);
+            // });
+        }
+
+        else {
+            filteredRecipesSecondary = SecondarySearch.matchIngredients(searchParams).filter(x => SecondarySearch.matchAppareils(searchParams).includes(x));
+            // filteredRecipesSecondary = SecondarySearch.matchIngredients(searchParams).filter(x => SecondarySearch.matchUstensiles(searchParams).includes(x));
+            // filteredRecipesSecondary = SecondarySearch.matchUstensiles(searchParams).filter(x => SecondarySearch.matchAppareils(searchParams).includes(x));
+        }
         
     return filteredRecipesSecondary;
     }
@@ -30,7 +40,6 @@ class SecondarySearch {
                 });
             });
         }
-       
         return filteredRecipesIngredient;
     }
 
