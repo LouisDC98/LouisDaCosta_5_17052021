@@ -1,7 +1,4 @@
-import { eventClickIcon, eventClickLink } from '../eventListener.js';
-import recipes from '../data/recipes.js';
-
-eventClickIcon();
+import { eventClickLink } from '../eventListener.js';
 
 // Change placeholder when icon pressed
 function modifyPlaceholders() {
@@ -74,7 +71,32 @@ function openDropdown(contentId) {
   modifyPlaceholders();
 }
 
-displayTags(recipes);
+function createContent(arrayIngr, arrayAppa, arrayUste) {
+  let links;
+  // Remove all element with .card class after each keyup
+  document.querySelectorAll('.dropdown__content__links').forEach((a) => {
+    a.remove();
+  });
+  arrayIngr.forEach((ingredient) => {
+    links = document.createElement('a');
+    links.classList.add('dropdown__content__links');
+    links.innerHTML = ingredient;
+    document.getElementById('contIngr').appendChild(links);
+  });
+  arrayAppa.forEach((appliance) => {
+    links = document.createElement('a');
+    links.classList.add('dropdown__content__links');
+    links.innerHTML = appliance;
+    document.getElementById('contAppa').appendChild(links);
+  });
+  arrayUste.forEach((ustensil) => {
+    links = document.createElement('a');
+    links.classList.add('dropdown__content__links');
+    links.innerHTML = ustensil;
+    document.getElementById('contUste').appendChild(links);
+  });
+  eventClickLink();
+}
 
 function displayTags(filteredRecipes) {
   const arrayIngr = [];
@@ -107,32 +129,6 @@ function displayTags(filteredRecipes) {
 }
 
 // Create list of ingredients
-function createContent(arrayIngr, arrayAppa, arrayUste) {
-  let links;
-  // Remove all element with .card class after each keyup
-  document.querySelectorAll('.dropdown__content__links').forEach((a) => {
-    a.remove();
-  });
-  arrayIngr.forEach((ingredient) => {
-    links = document.createElement('a');
-    links.classList.add('dropdown__content__links');
-    links.innerHTML = ingredient;
-    document.getElementById('contIngr').appendChild(links);
-  });
-  arrayAppa.forEach((appliance) => {
-    links = document.createElement('a');
-    links.classList.add('dropdown__content__links');
-    links.innerHTML = appliance;
-    document.getElementById('contAppa').appendChild(links);
-  });
-  arrayUste.forEach((ustensil) => {
-    links = document.createElement('a');
-    links.classList.add('dropdown__content__links');
-    links.innerHTML = ustensil;
-    document.getElementById('contUste').appendChild(links);
-  });
-  eventClickLink();
-}
 
 export {
   modifyPlaceholders, closeAllDropdown, toggleDropdown, openDropdown, createContent, displayTags,

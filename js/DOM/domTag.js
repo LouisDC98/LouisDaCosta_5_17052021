@@ -2,14 +2,13 @@ import SearchServices from '../search/SearchServices/SearchServices.js';
 
 const tags = [];
 
-// Add tag in array and launch function for create tag
-function addTagContent(name, categorie) {
-  const index = tags.findIndex((tag) => tag === name);
-  if (index === -1) {
-    tags.push(name);
-    addTag(name, categorie);
-    SearchServices.launchSearch();
-  }
+/** ******************************************************************************** */
+/** **************************Create and remove a tag div************************** */
+/** ****************************************************************************** */
+
+// Remove tag
+function removeTag(name) {
+  document.getElementById(name).remove();
 }
 
 // Remove tag in array and launch function for remove tag
@@ -22,9 +21,6 @@ function removeTagContent(name) {
   }
 }
 
-/** ******************************************************************************** */
-/** **************************Create and remove a tag div************************** */
-/** ****************************************************************************** */
 //  Create a tag with text of the link pressed
 function addTag(name, categorie) {
   const div = document.createElement('div');
@@ -68,9 +64,14 @@ function addTag(name, categorie) {
   });
 }
 
-// Remove tag
-function removeTag(name) {
-  document.getElementById(name).remove();
+// Add tag in array and launch function for create tag
+function addTagContent(name, categorie) {
+  const index = tags.findIndex((tag) => tag === name);
+  if (index === -1) {
+    tags.push(name);
+    addTag(name, categorie);
+    SearchServices.launchSearch();
+  }
 }
 
 export {

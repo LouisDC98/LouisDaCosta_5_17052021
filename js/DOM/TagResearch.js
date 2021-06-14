@@ -1,7 +1,4 @@
-import {closeAllDropdown, openDropdown} from './domDropdown.js';
-import {eventKeyupInput} from '../eventListener.js';
-
-eventKeyupInput();
+import { closeAllDropdown, openDropdown } from './domDropdown.js';
 
 class TagResearch {
   // Research match between input in dropdown and tag content
@@ -13,7 +10,7 @@ class TagResearch {
     }
 
     const a = [...content.getElementsByTagName('a')];
-    a.forEach(element => {
+    a.forEach((element) => {
       const txtValue = element.textContent || element.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         element.style.display = '';
@@ -23,6 +20,5 @@ class TagResearch {
     });
   }
 }
-
 
 export default TagResearch;

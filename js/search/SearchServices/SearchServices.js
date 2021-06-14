@@ -1,6 +1,5 @@
 import MainSearch from './MainSearch.js';
 import SearchParams from '../SearchParams.js';
-import { eventKeyupSearchBar } from '../../eventListener.js';
 import recipes from '../../data/recipes.js';
 import SecondarySearch from './SecondarySearch.js';
 import SearchResult from '../SearchResult.js';
@@ -22,5 +21,3 @@ class SearchServices {
 }
 
 export default SearchServices;
-
-eventKeyupSearchBar();

@@ -80,4 +80,4 @@ function displayRecipes(recipes) {
   });
 }
 
-export { displayRecipes };
+export default displayRecipes;
