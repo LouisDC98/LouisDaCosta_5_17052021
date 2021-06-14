@@ -24,14 +24,9 @@ function eventClickIcon() {
   const iconAppa = document.getElementById('iconAppa');
   const iconUste = document.getElementById('iconUste');
 
-  // Define each dropdown
-  const dropdownIngr = document.getElementById('dropdownIngr');
-  const dropdownAppa = document.getElementById('dropdownAppa');
-  const dropdownUste = document.getElementById('dropdownUste');
-
-  iconIngr.addEventListener('click', () => {toggleDropdown(dropdownIngr);}); 
-  iconAppa.addEventListener('click', () => {toggleDropdown(dropdownAppa);});  
-  iconUste.addEventListener('click', () => {toggleDropdown(dropdownUste);});
+  iconIngr.addEventListener('click', toggleDropdown); 
+  iconAppa.addEventListener('click', toggleDropdown);  
+  iconUste.addEventListener('click', toggleDropdown);
 }
 
 function eventKeyupSearchBar() {

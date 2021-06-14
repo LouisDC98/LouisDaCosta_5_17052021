@@ -34,7 +34,11 @@ function closeAllDropdown() {
   modifyPlaceholders();
 }
 
-function toggleDropdown(content) {
+function toggleDropdown(event) {
+  let content = document.getElementById(event.target.getAttribute('data-target'))
+  if (content == null) {
+    content = document.getElementById(event.srcElement.parentElement.getAttribute('data-target'))
+  }
   const isDisplayed = content.classList.contains('show');
   closeAllDropdown();
   if (!isDisplayed) {
