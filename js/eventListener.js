@@ -1,6 +1,6 @@
 import TagResearch from './DOM/TagResearch.js';
-import {toggleDropdown} from './DOM/domDropdown.js';
-import {addTagContent} from './DOM/domTag.js';
+import { toggleDropdown } from './DOM/domDropdown.js';
+import { addTagContent } from './DOM/domTag.js';
 import SearchServices from './search/SearchServices/SearchServices.js';
 
 function eventKeyupInput() {
@@ -13,9 +13,9 @@ function eventKeyupInput() {
   const contAppa = document.getElementById('contAppa');
   const contUste = document.getElementById('contUste');
 
-  inputIngr.addEventListener('keyup', () => {TagResearch.filterFunction(inputIngr, contIngr);});
-  inputAppa.addEventListener('keyup', () => {TagResearch.filterFunction(inputAppa, contAppa);});
-  inputUste.addEventListener('keyup', () => {TagResearch.filterFunction(inputUste, contUste);});
+  inputIngr.addEventListener('keyup', () => { TagResearch.filterFunction(inputIngr, contIngr); });
+  inputAppa.addEventListener('keyup', () => { TagResearch.filterFunction(inputAppa, contAppa); });
+  inputUste.addEventListener('keyup', () => { TagResearch.filterFunction(inputUste, contUste); });
 }
 
 function eventClickIcon() {
@@ -24,8 +24,8 @@ function eventClickIcon() {
   const iconAppa = document.getElementById('iconAppa');
   const iconUste = document.getElementById('iconUste');
 
-  iconIngr.addEventListener('click', toggleDropdown); 
-  iconAppa.addEventListener('click', toggleDropdown);  
+  iconIngr.addEventListener('click', toggleDropdown);
+  iconAppa.addEventListener('click', toggleDropdown);
   iconUste.addEventListener('click', toggleDropdown);
 }
 
@@ -52,4 +52,6 @@ function eventClickLink() {
   });
 }
 
-export {eventKeyupInput, eventClickIcon, eventKeyupSearchBar, eventClickLink}
+export {
+  eventKeyupInput, eventClickIcon, eventKeyupSearchBar, eventClickLink,
+};

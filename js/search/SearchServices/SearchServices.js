@@ -15,13 +15,12 @@ class SearchServices {
     console.log(searchParams);
     const searchMainRecipesResult = MainSearch.research(searchParams);
     const searchTagsRecipesResult = SecondarySearch.tagsMatch(searchParams, recipes);
-    console.log('Filtre main : ',searchMainRecipesResult);
-    console.log('Filtre tags : ',searchTagsRecipesResult)
-    SearchResult.displayResult(searchMainRecipesResult, searchTagsRecipesResult, searchParams)
-  };
-
+    console.log('Filtre main : ', searchMainRecipesResult);
+    console.log('Filtre tags : ', searchTagsRecipesResult);
+    SearchResult.displayResult(searchMainRecipesResult, searchTagsRecipesResult, searchParams);
+  }
 }
 
-export default SearchServices ;
+export default SearchServices;
 
 eventKeyupSearchBar();

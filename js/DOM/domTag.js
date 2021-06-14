@@ -1,4 +1,4 @@
-import SearchServices from "../search/SearchServices/SearchServices.js";
+import SearchServices from '../search/SearchServices/SearchServices.js';
 
 const tags = [];
 
@@ -22,55 +22,57 @@ function removeTagContent(name) {
   }
 }
 
- /** ******************************************************************************** */
-  /** **************************Create and remove a tag div************************** */
-  /** ****************************************************************************** */
-  //  Create a tag with text of the link pressed
-  function addTag(name, categorie) {
-    const div = document.createElement('div');
-    div.classList.add('tag');
-    div.setAttribute('id', name);
-    let classColor;
-    switch (categorie) {
-      case 'contIngr':
-        classColor = 'tag--ingredient';
-        break;
-      case 'contAppa':
-        classColor = 'tag--appareil';
-        break;
-      case 'contUste':
-        classColor = 'tag--ustensile';
-        break;
-      default:
-        break;
-    }
-    div.classList.add(classColor);
-
-    const title = document.createElement('p');
-    title.classList.add('tag__name');
-    title.innerHTML = name;
-
-    const btnClose = document.createElement('button');
-    btnClose.classList.add('tag__close');
-
-    const icon = document.createElement('i');
-    icon.classList.add('far');
-    icon.classList.add('fa-times-circle');
-    icon.classList.add('tag__icon');
-
-    document.getElementById('sectionTag').appendChild(div);
-    div.appendChild(title);
-    div.appendChild(btnClose);
-    btnClose.appendChild(icon);
-
-    btnClose.addEventListener('click', () => {
-      removeTagContent(name);
-    });
+/** ******************************************************************************** */
+/** **************************Create and remove a tag div************************** */
+/** ****************************************************************************** */
+//  Create a tag with text of the link pressed
+function addTag(name, categorie) {
+  const div = document.createElement('div');
+  div.classList.add('tag');
+  div.setAttribute('id', name);
+  let classColor;
+  switch (categorie) {
+    case 'contIngr':
+      classColor = 'tag--ingredient';
+      break;
+    case 'contAppa':
+      classColor = 'tag--appareil';
+      break;
+    case 'contUste':
+      classColor = 'tag--ustensile';
+      break;
+    default:
+      break;
   }
+  div.classList.add(classColor);
 
-  // Remove tag
-  function removeTag(name) {
-    document.getElementById(name).remove();
-  }
+  const title = document.createElement('p');
+  title.classList.add('tag__name');
+  title.innerHTML = name;
 
-export {addTagContent, removeTagContent, addTag, removeTag}
+  const btnClose = document.createElement('button');
+  btnClose.classList.add('tag__close');
+
+  const icon = document.createElement('i');
+  icon.classList.add('far');
+  icon.classList.add('fa-times-circle');
+  icon.classList.add('tag__icon');
+
+  document.getElementById('sectionTag').appendChild(div);
+  div.appendChild(title);
+  div.appendChild(btnClose);
+  btnClose.appendChild(icon);
+
+  btnClose.addEventListener('click', () => {
+    removeTagContent(name);
+  });
+}
+
+// Remove tag
+function removeTag(name) {
+  document.getElementById(name).remove();
+}
+
+export {
+  addTagContent, removeTagContent, addTag, removeTag,
+};

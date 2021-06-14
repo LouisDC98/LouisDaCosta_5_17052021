@@ -1,4 +1,4 @@
-import {eventClickIcon, eventClickLink} from '../eventListener.js';
+import { eventClickIcon, eventClickLink } from '../eventListener.js';
 import recipes from '../data/recipes.js';
 
 eventClickIcon();
@@ -35,9 +35,9 @@ function closeAllDropdown() {
 }
 
 function toggleDropdown(event) {
-  let content = document.getElementById(event.target.getAttribute('data-target'))
+  let content = document.getElementById(event.target.getAttribute('data-target'));
   if (content == null) {
-    content = document.getElementById(event.srcElement.parentElement.getAttribute('data-target'))
+    content = document.getElementById(event.srcElement.parentElement.getAttribute('data-target'));
   }
   const isDisplayed = content.classList.contains('show');
   closeAllDropdown();
@@ -82,35 +82,34 @@ function displayTags(filteredRecipes) {
   const arrayUste = [];
 
   filteredRecipes.forEach((recipe) => {
-  recipe.appliance.forEach((appliance) => {
-    if (arrayAppa.indexOf(appliance) === -1) {
-      arrayAppa.push(appliance);
-    }
+    recipe.appliance.forEach((appliance) => {
+      if (arrayAppa.indexOf(appliance) === -1) {
+        arrayAppa.push(appliance);
+      }
+    });
+    recipe.ustensils.forEach((ustensil) => {
+      if (arrayUste.indexOf(ustensil) === -1) {
+        arrayUste.push(ustensil);
+      }
+    });
+    recipe.ingredients.forEach((ingredient) => {
+      if (arrayIngr.indexOf(ingredient.ingredient) === -1) {
+        arrayIngr.push(ingredient.ingredient);
+      }
+    });
   });
-  recipe.ustensils.forEach((ustensil) => {
-    if (arrayUste.indexOf(ustensil) === -1) {
-      arrayUste.push(ustensil);
-    }
-  });
-  recipe.ingredients.forEach((ingredient) => {
-    if (arrayIngr.indexOf(ingredient.ingredient) === -1) {
-      arrayIngr.push(ingredient.ingredient);
-    }
-  });
-});
 
-arrayIngr.sort();
-arrayUste.sort();
-arrayAppa.sort();
+  arrayIngr.sort();
+  arrayUste.sort();
+  arrayAppa.sort();
 
-createContent(arrayIngr, arrayAppa, arrayUste);
-
+  createContent(arrayIngr, arrayAppa, arrayUste);
 }
 
 // Create list of ingredients
 function createContent(arrayIngr, arrayAppa, arrayUste) {
   let links;
-    // Remove all element with .card class after each keyup
+  // Remove all element with .card class after each keyup
   document.querySelectorAll('.dropdown__content__links').forEach((a) => {
     a.remove();
   });
@@ -135,4 +134,6 @@ function createContent(arrayIngr, arrayAppa, arrayUste) {
   eventClickLink();
 }
 
-export {modifyPlaceholders,closeAllDropdown, toggleDropdown, openDropdown, createContent, displayTags}
+export {
+  modifyPlaceholders, closeAllDropdown, toggleDropdown, openDropdown, createContent, displayTags,
+};
