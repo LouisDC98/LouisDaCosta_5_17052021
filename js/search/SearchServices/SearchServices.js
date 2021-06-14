@@ -15,24 +15,20 @@ class SearchServices {
     const searchParams = new SearchParams();
     console.log(searchParams);
     const searchMainRecipesResult = MainSearch.research(searchParams);
-    const searchTagsRecipesResult = SecondarySearch.tagsMatch(searchParams);
+    const searchTagsRecipesResult = SecondarySearch.tagsMatch(searchParams, recipes);
     console.log('Filtre main : ',searchMainRecipesResult);
     console.log('Filtre tags : ',searchTagsRecipesResult)
-    const ArrayTags = document.getElementsByClassName('tag')
+    
+    let displayedResult =  searchMainRecipesResult;
+    if(searchParams.appareils.length > 0 || searchParams.ingredients.length > 0 || searchParams.ustensiles.length > 0){
+      if(searchParams.main.length > 0){
+        displayedResult = searchTagsRecipesResult.filter(x =>searchMainRecipesResult.includes(x));
+      } else {
+        displayedResult = searchTagsRecipesResult
+      }
+    }
 
-    if (searchMainRecipesResult.length < 50) {
-      displayRecipes(searchMainRecipesResult);
-    }
-    if (ArrayTags.length !== 0) {
-      displayRecipes(searchTagsRecipesResult);
-    }
-    if (ArrayTags.length !== 0 && searchMainRecipesResult.length < 49 ) {
-      var result = searchTagsRecipesResult.filter(x =>searchMainRecipesResult.includes(x));
-      displayRecipes(result);
-    }
-    if (ArrayTags.length === 0 && searchMainRecipesResult.length === 50 ) {
-      displayRecipes(recipes);
-    }
+    displayRecipes(displayedResult);
     displayTags(searchMainRecipesResult);
   };
 
