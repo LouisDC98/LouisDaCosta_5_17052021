@@ -12,15 +12,15 @@ class TagResearch {
       openDropdown(content.id);
     }
 
-    const a = content.getElementsByTagName('a');
-    for (let i = 0; i < a.length; ++i) {
-      const txtValue = a[i].textContent || a[i].innerText;
+    const a = [...content.getElementsByTagName('a')];
+    a.forEach(element => {
+      const txtValue = element.textContent || element.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        a[i].style.display = '';
+        element.style.display = '';
       } else {
-        a[i].style.display = 'none';
+        element.style.display = 'none';
       }
-    }
+    });
   }
 }
 
