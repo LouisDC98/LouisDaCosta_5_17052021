@@ -2,20 +2,22 @@ import { closeAllDropdown, openDropdown } from './domDropdown.js';
 
 class TagResearch {
   // Research match between input in dropdown and tag content
-  static filterFunction(input, content) {
-    const filter = input.value.toUpperCase();
+  static filterFunction(event) {
+    const filter = event.target.value.toUpperCase();
+    const dropdown = event.target.parentElement.parentElement;
     if (filter.length > 0) {
       closeAllDropdown();
-      openDropdown(content.id);
+      openDropdown(dropdown.id);
     }
 
-    const a = [...content.getElementsByTagName('a')];
-    a.forEach((element) => {
+    [...dropdown.getElementsByTagName('a')].forEach((element) => {
       const txtValue = element.textContent || element.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        element.style.display = '';
-      } else {
-        element.style.display = 'none';
+        if (element.classList.contains('dropdown__content__links--hide')) {
+          element.classList.remove('dropdown__content__links--hide');
+        }
+      } else if (!element.classList.contains('dropdown__content__links--hide')) {
+        element.classList.add('dropdown__content__links--hide');
       }
     });
   }

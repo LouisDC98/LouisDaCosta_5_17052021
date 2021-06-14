@@ -44,26 +44,8 @@ function toggleDropdown(event) {
   modifyPlaceholders();
 }
 
-function openDropdown(contentId) {
-  let dropdown;
-  // Define each dropdown
-  const dropdownIngr = document.getElementById('dropdownIngr');
-  const dropdownAppa = document.getElementById('dropdownAppa');
-  const dropdownUste = document.getElementById('dropdownUste');
-  switch (contentId) {
-    case 'contIngr':
-      dropdown = dropdownIngr;
-      break;
-    case 'contAppa':
-      dropdown = dropdownAppa;
-      break;
-    case 'contUste':
-      dropdown = dropdownUste;
-      break;
-    default:
-      break;
-  }
-
+function openDropdown(dropdownId) {
+  const dropdown = document.getElementById(dropdownId);
   const isDisplayed = dropdown.classList.contains('show');
   if (!isDisplayed) {
     dropdown.classList.add('show');

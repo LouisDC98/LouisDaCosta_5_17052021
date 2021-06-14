@@ -133,6 +133,9 @@
                 width: calc(33% - 10px);
                 min-width: 9rem;
             }
+            &--hide {
+                display: none;
+            }
         }
         .show & {
             display: flex;

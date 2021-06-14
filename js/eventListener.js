@@ -4,29 +4,17 @@ import { addTagContent } from './DOM/domTag.js';
 import SearchServices from './search/SearchServices/SearchServices.js';
 
 function eventKeyupInput() {
-  // Define search bar in each button
-  const inputIngr = document.getElementById('inputIngr');
-  const inputAppa = document.getElementById('inputAppa');
-  const inputUste = document.getElementById('inputUste');
-  // Define each list of button
-  const contIngr = document.getElementById('contIngr');
-  const contAppa = document.getElementById('contAppa');
-  const contUste = document.getElementById('contUste');
-
-  inputIngr.addEventListener('keyup', () => { TagResearch.filterFunction(inputIngr, contIngr); });
-  inputAppa.addEventListener('keyup', () => { TagResearch.filterFunction(inputAppa, contAppa); });
-  inputUste.addEventListener('keyup', () => { TagResearch.filterFunction(inputUste, contUste); });
+  const inputs = [...document.getElementsByClassName('dropbtn__search')];
+  inputs.forEach((element) => {
+    element.addEventListener('keyup', TagResearch.filterFunction);
+  });
 }
 
 function eventClickIcon() {
-  // Define icon of each dropdown
-  const iconIngr = document.getElementById('iconIngr');
-  const iconAppa = document.getElementById('iconAppa');
-  const iconUste = document.getElementById('iconUste');
-
-  iconIngr.addEventListener('click', toggleDropdown);
-  iconAppa.addEventListener('click', toggleDropdown);
-  iconUste.addEventListener('click', toggleDropdown);
+  const icons = [...document.getElementsByClassName('arrow-down')];
+  icons.forEach((element) => {
+    element.addEventListener('click', toggleDropdown);
+  });
 }
 
 function eventKeyupSearchBar() {
@@ -35,16 +23,8 @@ function eventKeyupSearchBar() {
 }
 
 function eventClickLink() {
-  // Define each list of button
-  const contIngr = document.getElementById('contIngr');
-  const contAppa = document.getElementById('contAppa');
-  const contUste = document.getElementById('contUste');
   // Create an array with all a
-  const links = [];
-  links.push(...contIngr.getElementsByTagName('a'));
-  links.push(...contAppa.getElementsByTagName('a'));
-  links.push(...contUste.getElementsByTagName('a'));
-
+  const links = [...document.getElementsByClassName('dropdown__content__links')];
   links.forEach((link) => {
     link.addEventListener('click', () => {
       addTagContent(link.innerHTML, link.parentElement.id);

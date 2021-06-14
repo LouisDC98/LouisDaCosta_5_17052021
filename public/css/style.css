@@ -203,6 +203,9 @@ body {
     min-width: 9rem;
   }
 }
+.dropdown__content__links--hide {
+  display: none;
+}
 .show .dropdown__content {
   display: flex;
   flex-direction: row;
