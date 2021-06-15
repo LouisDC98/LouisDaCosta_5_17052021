@@ -1,5 +1,6 @@
 import displayRecipes from '../DOM/domRecipes.js';
 import { displayTags } from '../DOM/domDropdown.js';
+import domNoResult from '../DOM/domNoResult.js';
 
 class SearchResult {
   // Display all recipes if all inputs are empty
@@ -19,6 +20,7 @@ class SearchResult {
         displayedResult = searchTagsRecipesResult;
       }
     }
+    domNoResult.toto(displayedResult);
     displayRecipes(displayedResult);
     displayTags(searchMainRecipesResult);
   }

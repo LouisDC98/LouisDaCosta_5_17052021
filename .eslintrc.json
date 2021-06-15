@@ -12,6 +12,9 @@
         "sourceType": "module"
     },
     "rules": {
-        "import/extensions": ["off"]
+        "import/extensions": ["off"],
+        "no-bitwise": ["off"],
+        "import/no-cycle": ["warn"],
+        "no-console": ["off"]
     }
 }

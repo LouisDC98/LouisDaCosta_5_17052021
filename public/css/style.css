@@ -333,6 +333,22 @@ input[type=search]::-webkit-search-results-decoration {
   background-color: #ED6454;
 }
 
+.noResult {
+  display: none;
+  border-radius: 5px;
+  background-color: #e9e9e9;
+  margin: 2rem 0;
+}
+.noResult__text {
+  margin: 0;
+  padding: 5px 20px;
+  color: black;
+  text-align: center;
+}
+.noResult--hide {
+  display: flex;
+}
+
 .recipes-bloc {
   display: flex;
   justify-content: center;
