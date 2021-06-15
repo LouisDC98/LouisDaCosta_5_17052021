@@ -21,6 +21,22 @@ class TagResearch {
       }
     });
   }
+
+  static hideSelectedTag() {
+    const selectedTagsArray = [...document.getElementsByClassName('tag__name')];
+    selectedTagsArray.forEach((elementSelected) => {
+      const dropdownTagsArray = [...document.getElementsByClassName('dropdown__content__links')];
+      dropdownTagsArray.forEach((element) => {
+        if (elementSelected.innerHTML === element.innerHTML) {
+          if (!element.classList.contains('dropdown__content__links--hide')) {
+            element.classList.add('dropdown__content__links--hide');
+          } else if (element.classList.contains('dropdown__content__links--hide')) {
+            element.classList.remove('dropdown__content__links--hide');
+          }
+        }
+      });
+    });
+  }
 }
 
 export default TagResearch;

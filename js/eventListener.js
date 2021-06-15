@@ -28,6 +28,7 @@ function eventClickLink() {
   links.forEach((link) => {
     link.addEventListener('click', () => {
       addTagContent(link.innerHTML, link.parentElement.id);
+      TagResearch.hideSelectedTag();
     });
   });
 }
