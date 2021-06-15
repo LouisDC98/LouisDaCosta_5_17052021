@@ -345,7 +345,7 @@ input[type=search]::-webkit-search-results-decoration {
   color: black;
   text-align: center;
 }
-.noResult--hide {
+.noResult--show {
   display: flex;
 }
 

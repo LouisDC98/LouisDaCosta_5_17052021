@@ -20,7 +20,7 @@ class SearchResult {
         displayedResult = searchTagsRecipesResult;
       }
     }
-    domNoResult.toto(displayedResult);
+    domNoResult.toggleNoResult(displayedResult);
     displayRecipes(displayedResult);
     displayTags(searchMainRecipesResult);
   }
