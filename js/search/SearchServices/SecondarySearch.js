@@ -8,16 +8,10 @@ class SecondarySearch {
     const TagAppareil = document.getElementsByClassName('tag--appareil');
     const TagUstensile = document.getElementsByClassName('tag--ustensile');
 
-    if (TagIngredient.length !== 0) {
-      filteredRecipesByIngredients = SecondarySearch.matchIngredients(searchParams, recipes);
-    }
-    if (TagAppareil.length !== 0) {
-      filteredRecipesByAppareils = SecondarySearch.matchAppareils(searchParams, recipes);
-    }
-
-    if (TagUstensile.length !== 0) {
-      filteredRecipesByUstensiles = SecondarySearch.matchUstensiles(searchParams, recipes);
-    }
+    const [ingr, appa, uste] = SecondarySearch.matchIngredients(searchParams, recipes);
+    filteredRecipesByIngredients = ingr;
+    filteredRecipesByAppareils = appa;
+    filteredRecipesByUstensiles = uste;
 
     const union = [...new Set(
       [...filteredRecipesByIngredients,
@@ -30,7 +24,6 @@ class SecondarySearch {
       let foundInAppareils = 1;
       let foundInIngredients = 1;
       let foundInUstensiles = 1;
-
       if (TagIngredient.length !== 0) {
         foundInIngredients = filteredRecipesByIngredients.findIndex(
           (elem) => elem.id === element.id,
@@ -55,66 +48,60 @@ class SecondarySearch {
     return filteredRecipesSecondary;
   }
 
-  // If at least one tag ingredient is selected
-  // research in each recipe if each ingredient match with the tag
   static matchIngredients(searchParams, recipes) {
+    const filteredTag = [];
+
     const filteredRecipesIngredient = [];
     if (searchParams.ingredients.length > 0) {
       recipes.forEach((recipe) => {
-        let isFound = true;
+        let isFoundIngr = true;
         searchParams.ingredients.forEach((element) => {
-          isFound &= recipe.ingredients.findIndex(
+          isFoundIngr &= recipe.ingredients.findIndex(
             (ingredient) => ingredient.ingredient.indexOf(element) > -1,
           ) > -1;
         });
-        if (isFound) {
+        if (isFoundIngr) {
           filteredRecipesIngredient.push(recipe);
         }
       });
     }
-    return filteredRecipesIngredient;
-  }
 
-  // If at least one tag appliance is selected
-  // research in each recipe if each appliance match with the tag
-  static matchAppareils(searchParams, recipes) {
     const filteredRecipesAppareil = [];
     if (searchParams.appareils.length > 0) {
       recipes.forEach((recipe) => {
-        let isFound = true;
+        let isFoundAppa = true;
         searchParams.appareils.forEach((element) => {
-          isFound &= recipe.appliance.findIndex(
+          isFoundAppa &= recipe.appliance.findIndex(
             (appareil) => appareil.indexOf(element) > -1,
           )
              > -1;
         });
-        if (isFound) {
+        if (isFoundAppa) {
           filteredRecipesAppareil.push(recipe);
         }
       });
     }
-    return filteredRecipesAppareil;
-  }
 
-  // If at least one tag ustensil is selected
-  // research in each recipe if each ustensil match with the tag
-  static matchUstensiles(searchParams, recipes) {
     const filteredRecipesUstensile = [];
     if (searchParams.ustensiles.length > 0) {
       recipes.forEach((recipe) => {
-        let isFound = true;
+        let isFoundUste = true;
         searchParams.ustensiles.forEach((element) => {
-          isFound &= recipe.ustensils.findIndex(
+          isFoundUste &= recipe.ustensils.findIndex(
             (ustensile) => ustensile.indexOf(element) > -1,
           )
              > -1;
         });
-        if (isFound) {
+        if (isFoundUste) {
           filteredRecipesUstensile.push(recipe);
         }
       });
     }
-    return filteredRecipesUstensile;
+
+    filteredTag.push(filteredRecipesIngredient);
+    filteredTag.push(filteredRecipesAppareil);
+    filteredTag.push(filteredRecipesUstensile);
+    return filteredTag;
   }
 }
 
