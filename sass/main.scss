@@ -1,1 +1,14 @@
+@import "./utils/_variable";
+@import "./utils/_mixin";
 
+@import "./base/_body";
+@import "./base/_header";
+
+@import "./components/_searchBar";
+@import "./components/_dropdown";
+@import "./components/_card";
+@import "./components/_tag";
+@import "./components/_noResult";
+
+@import "./layout/_recipesBloc";
+@import "./layout/_tagsBloc";

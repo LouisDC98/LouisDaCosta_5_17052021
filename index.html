@@ -1,22 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <title>Les Petits Plats</title>
     <meta name="description" content="Vos recettes à porté de clics">
-    <link rel="icon" type="image/png" href="#" />
+    <link rel="icon" type="image/png" href="./public/img/LogoPNG.PNG" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/5dd13a47f1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="public/css/style.css">
 </head>
+
 <body>
 
-    <header>
+    <header class="home-header">
+        <img src='./public/img/Logo_slogan.svg' alt="Logo et slogan du site" class="home-header__main-logo">
     </header>
-   
+
     <main>
-       
+        <form class="searchtool">
+            <input type="text" name="name" id="searchBar" required
+                placeholder="Recherche un ingrédient, appareil, ustensile ou recette" class="searchtool__search-bar">
+            <button class="searchtool__icon"><i class="fas fa-search"></i></button>
+        </form>
+        <section class="tags-bloc" id="sectionTag">
+        </section>
+        <section class="buttons-section">
+            <div class="dropdown" id="dropdownIngr">
+                <div class="dropbtn dropbtn--ingredients">
+                    <input type="search" placeholder="Ingrédients" class="dropbtn__search" id="inputIngr">
+                    <div class="arrow-down" id="iconIngr" data-target="dropdownIngr"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="dropdown__content dropdown__content--ingredients" id="contIngr">
+                </div>
+            </div>
+
+            <div class="dropdown" id="dropdownAppa">
+                <div class="dropbtn dropbtn--appareils">
+                    <input type="search" placeholder="Appareils" class="dropbtn__search" id="inputAppa">
+                    <div class="arrow-down" id="iconAppa" data-target="dropdownAppa"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="dropdown__content dropdown__content--appareils" id="contAppa">
+                </div>
+            </div>
+
+            <div class="dropdown" id="dropdownUste">
+                <div class="dropbtn dropbtn--ustensiles">
+                    <input type="search" placeholder="Ustensiles" class="dropbtn__search" id="inputUste">
+                    <div class="arrow-down" id="iconUste" data-target="dropdownUste"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="dropdown__content dropdown__content--ustensiles" id="contUste">    
+                </div>
+            </div>
+        </section>
+
+        <article class="recipes-bloc">
+        </article>
     </main>
 
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>

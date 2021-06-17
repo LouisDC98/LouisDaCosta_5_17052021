@@ -1,0 +1,155 @@
+.buttons-section {
+    display: flex;
+    justify-content: center;
+    @include desktop {
+        justify-content: flex-start;
+    }
+    flex-wrap: wrap;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 16px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    height: 3.1rem;
+    width: $widthContentMobile;
+    @include desktop {
+        transition: width ease-in-out;
+        width: 12rem;
+    }
+    &--ingredients {
+        background-color: $ingredientsDropdown;
+    }
+    &--appareils {
+        background-color: $appareilsDropdown;
+    }
+    &--ustensiles {
+        background-color: $ustensilesDropdown;
+    }
+    &__search {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        color: white;
+        padding: 0.5rem 0;
+        margin: 0.5rem 0 0.5rem 1rem;
+        width: 7rem;
+    }
+    ::placeholder {
+        color: white;
+        font-family: $lato;
+        font-weight: 700;
+    }
+}
+
+// Active when icon is pressed
+.show .dropbtn {
+    @include desktop {
+        width: $widthContentDesktop;
+    }
+}
+
+// Active when icon is pressed
+.show .dropbtn__search {
+    width: 55vw;
+    @include desktop {
+        width: 20rem;
+    }
+}
+
+.arrow-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 100%;
+    transform: rotate(0deg);
+    transition: $transitionTime;
+}
+
+.show .arrow-down {
+    transform: rotate(180deg);
+    transition: $transitionTime * 2;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 1rem;
+    @include desktop {
+        margin-right: 2rem;
+    }
+    &__content {
+        display: none;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        position: absolute;
+        padding: 1rem 0;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        margin-top: -5px;
+        border-radius: 0 5px 5px 5px;
+        width: $widthContentMobile;
+        @include desktop {
+            width: $widthContentDesktop;
+        }
+        &--ingredients {
+            background-color: $ingredientsDropdown;
+            :hover {
+                background-color: lighten($ingredientsDropdown, 10%);
+                border-radius: 10px;
+            }
+        }
+        &--appareils {
+            background-color: $appareilsDropdown;
+            :hover {
+                background-color: lighten($appareilsDropdown, 10%);
+                border-radius: 10px;
+            }
+        }
+        &--ustensiles {
+            background-color: $ustensilesDropdown;
+            :hover {
+                background-color: lighten($ustensilesDropdown, 10%);
+                border-radius: 10px;
+            }
+        }
+        &__links {
+            display: block;
+            color: white;
+            padding: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 7rem;
+            @include desktop {
+                width: calc(33% - 10px);
+                min-width: 9rem;
+            }
+            &--hide {
+                display: none;
+            }
+        }
+        .show & {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    }
+}
+
+//Disable cross
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}

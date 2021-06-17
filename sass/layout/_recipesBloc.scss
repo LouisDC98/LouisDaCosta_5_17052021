@@ -1,0 +1,9 @@
+.recipes-bloc {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    @include desktop {
+        justify-content: flex-start;
+    }
+}

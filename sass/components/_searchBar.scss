@@ -1,0 +1,28 @@
+.searchtool {
+    display: flex;
+    justify-content: center;
+    @include desktop {
+        justify-content: flex-start;
+    }
+    align-items: center;
+    padding: 1rem 0;
+    &__search-bar {
+        border: none;
+        border-radius: 3px 0 0 3px;
+        background-color: $searchBarBackground;
+        padding: 13px;
+        width: 100%;
+        color: black;
+        font-size: 1rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    &__icon {
+        border: none;
+        border-radius: 0 3px 3px 0;
+        background-color: $searchBarBackground;
+        font-size: 1.5rem;
+        padding: 8.3px 10px 8.3px 10px;
+    }
+}

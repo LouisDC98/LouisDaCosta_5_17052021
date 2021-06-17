@@ -1,0 +1,9 @@
+body {
+    margin: auto;
+    max-width: 1920px;
+    padding: 1rem 1rem;
+    @include desktop {
+        padding: 1rem 2rem;
+    }
+    font-family: $lato;
+}

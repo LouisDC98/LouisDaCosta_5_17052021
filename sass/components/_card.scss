@@ -1,0 +1,67 @@
+.card {
+    background-color: gainsboro;
+    width: 80vw;
+    margin: 2rem 1rem 0 1rem;
+    @include desktop {
+        width: 26vw;
+        margin: 2rem 2rem 0 0;
+    }
+    border-radius: 5px;
+    &__img {
+        object-fit: cover;
+        height: 10rem;
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+    }
+    & > figcaption {
+        font-family: $lato;
+        padding: 0 1rem 1rem 1rem;
+    }
+    &__secondary {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.7rem;
+        &__ingredient {
+            padding: 0;
+            margin: 0 0.5rem 0 0;
+            list-style: none;
+        }
+        &__description {
+            margin: 0;
+            width: 45vw;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 16px;
+            max-height: 5.1rem;
+            @include desktop {
+                width: 15vw;
+            }
+        }
+    }
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__name {
+        width: 50vw;
+        @include desktop {
+            width: 20vw;
+        }
+        font-size: 1rem;
+        font-weight: normal;
+    }
+    & i {
+        margin: 0 0 0 0.5rem;
+    }
+    &__time {
+        display: flex;
+        align-items: center;
+        &__duration {
+            text-align: end;
+            font-weight: bold;
+            width: 56px;
+        }
+    }
+}

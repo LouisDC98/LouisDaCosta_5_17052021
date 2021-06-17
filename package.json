@@ -1,19 +1,27 @@
 {
-  "name": "writing-sass",
+  "name": "les_petits_plats_ldc",
   "version": "1.0.0",
   "description": "Les petits plats",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./public/css/style.css"
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
+    "lite": "lite-server -c ./liteserver-config.json",
+    "start": "npm run lite"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LouisDC98/LouisDaCosta_5_17052021"
+    "url": "git+https://github.com/LouisDC98/LouisDaCosta_5_17052021.git"
   },
   "author": "LouisDC98",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/LouisDC98/LouisDaCosta_5_17052021/issues"
   },
-  "homepage": ""
+  "homepage": "https://github.com/LouisDC98/LouisDaCosta_5_17052021#readme",
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.3",
+    "lite-server": "^2.6.1"
+  }
 }
