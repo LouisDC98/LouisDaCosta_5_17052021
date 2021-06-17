@@ -22,7 +22,7 @@ class SearchResult {
     }
     domNoResult.toggleNoResult(displayedResult);
     displayRecipes(displayedResult);
-    displayTags(searchMainRecipesResult);
+    displayTags(displayedResult);
   }
 }
 

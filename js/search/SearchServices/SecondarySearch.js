@@ -8,7 +8,7 @@ class SecondarySearch {
     const TagAppareil = document.getElementsByClassName('tag--appareil');
     const TagUstensile = document.getElementsByClassName('tag--ustensile');
 
-    const [ingr, appa, uste] = SecondarySearch.matchIngredients(searchParams, recipes);
+    const [ingr, appa, uste] = SecondarySearch.matchTags(searchParams, recipes);
     filteredRecipesByIngredients = ingr;
     filteredRecipesByAppareils = appa;
     filteredRecipesByUstensiles = uste;
@@ -48,7 +48,7 @@ class SecondarySearch {
     return filteredRecipesSecondary;
   }
 
-  static matchIngredients(searchParams, recipes) {
+  static matchTags(searchParams, recipes) {
     const filteredTag = [];
 
     const filteredRecipesIngredient = [];
