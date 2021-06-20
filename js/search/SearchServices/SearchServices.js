@@ -1,7 +1,6 @@
 import MainSearch from './MainSearch.js';
 import SearchParams from '../SearchParams.js';
 import recipes from '../../data/recipes.js';
-import SecondarySearch from './SecondarySearch.js';
 import SearchResult from '../SearchResult.js';
 
 class SearchServices {
@@ -13,7 +12,7 @@ class SearchServices {
     const searchParams = new SearchParams();
     console.log(searchParams);
     const searchMainRecipesResult = MainSearch.research(searchParams);
-    const searchTagsRecipesResult = SecondarySearch.tagsMatch(searchParams, recipes);
+    const searchTagsRecipesResult = MainSearch.tagsMatch(searchParams, recipes);
     console.log('Filtre main : ', searchMainRecipesResult);
     console.log('Filtre tags : ', searchTagsRecipesResult);
     SearchResult.displayResult(searchMainRecipesResult, searchTagsRecipesResult, searchParams);
