@@ -2,10 +2,9 @@ import recipes from '../../data/recipes.js';
 
 class MainSearch {
   static research(searchParams) {
-    let filteredRecipes = [];
+    const filteredRecipes = [];
     if (searchParams.main.length <= 2) {
-      filteredRecipes = [...recipes];
-      return filteredRecipes;
+      return recipes;
     }
     recipes.forEach((recipe) => {
       if (recipe.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().indexOf(searchParams.main) > -1) {
@@ -76,7 +75,12 @@ class MainSearch {
     const filteredTag = [];
 
     const filteredRecipesIngredient = [];
-    if (searchParams.ingredients.length > 0) {
+    const filteredRecipesAppareil = [];
+    const filteredRecipesUstensile = [];
+
+    if (searchParams.ingredients.length > 0
+      || searchParams.appareils.length > 0
+      || searchParams.ustensiles.length > 0) {
       recipes.forEach((recipe) => {
         let isFoundIngr = true;
         searchParams.ingredients.forEach((element) => {
@@ -87,12 +91,7 @@ class MainSearch {
         if (isFoundIngr) {
           filteredRecipesIngredient.push(recipe);
         }
-      });
-    }
 
-    const filteredRecipesAppareil = [];
-    if (searchParams.appareils.length > 0) {
-      recipes.forEach((recipe) => {
         let isFoundAppa = true;
         searchParams.appareils.forEach((element) => {
           isFoundAppa &= recipe.appliance.findIndex(
@@ -103,12 +102,7 @@ class MainSearch {
         if (isFoundAppa) {
           filteredRecipesAppareil.push(recipe);
         }
-      });
-    }
 
-    const filteredRecipesUstensile = [];
-    if (searchParams.ustensiles.length > 0) {
-      recipes.forEach((recipe) => {
         let isFoundUste = true;
         searchParams.ustensiles.forEach((element) => {
           isFoundUste &= recipe.ustensils.findIndex(

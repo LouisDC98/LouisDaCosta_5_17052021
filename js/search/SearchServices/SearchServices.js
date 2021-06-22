@@ -11,7 +11,7 @@ class SearchServices {
   static launchSearch() {
     const searchParams = new SearchParams();
     console.log(searchParams);
-    const searchMainRecipesResult = MainSearch.research(searchParams);
+    const searchMainRecipesResult = MainSearch.research(searchParams, recipes);
     const searchTagsRecipesResult = MainSearch.tagsMatch(searchParams, recipes);
     console.log('Filtre main : ', searchMainRecipesResult);
     console.log('Filtre tags : ', searchTagsRecipesResult);
