@@ -1,4 +1,5 @@
 import { eventClickLink } from '../eventListener.js';
+import TagResearch from './TagResearch.js';
 
 // Change placeholder when icon pressed
 function modifyPlaceholders() {
@@ -108,6 +109,7 @@ function displayTags(filteredRecipes) {
   arrayAppa.sort();
 
   createContent(arrayIngr, arrayAppa, arrayUste);
+  TagResearch.hideSelectedTag();
 }
 
 // Create list of ingredients
