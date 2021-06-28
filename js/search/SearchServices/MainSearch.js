@@ -12,9 +12,8 @@ class MainSearch {
       } else if (recipe.description.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().indexOf(searchParams.main) > -1) {
         filteredRecipes.push(recipe);
       } else if (
-        recipe.ingredients.forEach((element) => {
-          element.ingredient.indexOf(searchParams.main) > -1;
-        })
+        recipe.ingredients.find((element) =>
+        element.ingredient.toUpperCase().indexOf(searchParams.main) > -1) != undefined
       ) {
         filteredRecipes.push(recipe);
       }
